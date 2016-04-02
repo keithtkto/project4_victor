@@ -1,4 +1,5 @@
 var express      = require('express');
+var sassMiddleware = require('node-sass-middleware');
 var path         = require('path');
 var favicon      = require('serve-favicon');
 var logger       = require('morgan');
@@ -37,6 +38,17 @@ if (app.get('env') === 'development') {
 
 // Logging layer.
 app.use(logger('dev'));
+
+
+//node-sass-middleware to compile sass to css
+app.use(sassMiddleware({
+    /* Options */
+    src: __dirname + '/sass',
+    dest: path.join(__dirname, 'public'),
+    debug: true,
+    outputStyle: 'compressed',
+    prefix:  '/stylesheets'
+}));
 
 // Static routing layer.
 // app.use(favicon(path.join(__dirname, 'public', 'ga-favicon.ico')));
