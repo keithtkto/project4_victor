@@ -1,0 +1,23 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+body {
+  font: 1em/1.25, Arial, Helvetica, sans-serif;
+  font-family: 'Raleway', sans-serif;
+  background-color: blue;
+}
+
+/* Headlines */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: 'Raleway', Helvetica, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}

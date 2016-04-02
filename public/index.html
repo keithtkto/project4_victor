@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="victor">
 <head>
-  <title>New App</title>
+  <title>Victor - Your personal medical regiment reminder</title>
   <meta charset="utf-8">
 
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 
@@ -17,7 +18,18 @@
 
 </head>
 <body>
-  <h1>Victor</h1>
+  <header>
+    <nav>
+      <a ui-sref="welcome"><h2>VICTOR</h2><img src="" alt=""></a>
+      <ul class="nav-bar-right">
+        <li><a ui-sref="theapp">THE APP</a></li>
+        <li><a ui-sref="ourgoals">OUR GOALS</a></li>
+        <li><a ui-sref="aboutus">ABOUT US</a></li>
+        <li><a ui-sref="login">LOG IN</a></li>
+        <li><a ui-sref="download">DOWNLOAD</a></li>
+      </ul>
+    </nav>
+  </header>
   <main ui-view>
     <!-- ng stuff goes in here -->
   </main>
