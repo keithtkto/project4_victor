@@ -43,8 +43,8 @@ app.use(logger('dev'));
 //node-sass-middleware to compile sass to css
 app.use(sassMiddleware({
     /* Options */
-    src: __dirname + '/sass',
-    dest: path.join(__dirname, 'public'),
+    src: __dirname + '/public/stylesheets/sass',
+    dest: __dirname + 'public/stylesheets',
     debug: true,
     outputStyle: 'compressed',
     prefix:  '/stylesheets'
@@ -116,7 +116,7 @@ function validateContentType(req, res, next) {
 
 function allowCors(req, res, next) {
   res.header('Access-Control-Allow-Origin',  '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE');
   res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
 
   // Handle "preflight" requests.
