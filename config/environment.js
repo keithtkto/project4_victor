@@ -5,7 +5,7 @@ var localEnvVars = {
   SAFE_TITLE:     'auth-app',
   COOKIE_SECRET:  'notsosecretnowareyou',
   SESSION_SECRET: 'anotherfoolishsecret',
-  TOKEN_SECRET:   'andafinalsecretsadasitis'
+  TOKEN_SECRET:   'smeeeeeeeebanana'
 };
 
 // Merge all environmental variables into one object.
