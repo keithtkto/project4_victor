@@ -1,8 +1,8 @@
-$purple: #7B41BF;
 $red: #ed3d37;
 $greenish: #00D3CC;
 $blueish: #47BBD7;
 $offwhite: #F4F4F4;
+$darkblue: #211F56;
 
 
 * {
@@ -57,7 +57,7 @@ nav {
       display: inline;
       margin-right: 25px;
       a {
-        color: GhostWhite;
+        color: $offwhite;
         font-size: 20px;
         font-weight: bold;
         text-decoration: none;
@@ -74,7 +74,7 @@ nav {
 
 
 .video-container {
-  color: GhostWhite;
+  color: $offwhite;
   overflow: hidden;
   z-index: 0;
   height: 100%;
@@ -150,7 +150,7 @@ nav {
 .intro-goals {
   text-align: center;
   position: relative;
-  margin: 10px 30px;
+  margin: 20px 30px;
   h2 {
     font-size: 50px;
     font-weight: bolder;
@@ -172,6 +172,7 @@ nav {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      margin-bottom: 40px;
 
       h3 {
         font-size: 30px;
@@ -193,6 +194,38 @@ nav {
         max-width: 250px;
         margin: 0 auto;
       }
+    }
+  }
+}
+
+.intro-userstories {
+  margin: 20px 0;
+  background: url("../assets/user_story_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: $offwhite;
+  h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 1.5em;
+    display: inline-block;
+    margin: 3% 0 3% 6%;
+  }
+  div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+    div {
+      background: rgba(0,0,0,0.4);
+      padding: 1.0em;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      max-width: 250px;
+      margin: 25px 5px;
     }
   }
 }

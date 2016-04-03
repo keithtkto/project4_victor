@@ -39,7 +39,7 @@ nav {
       display: inline;
       margin-right: 25px; }
       nav ul li a {
-        color: GhostWhite;
+        color: #F4F4F4;
         font-size: 20px;
         font-weight: bold;
         text-decoration: none; }
@@ -50,7 +50,7 @@ nav {
       margin-right: 30px; }
 
 .video-container {
-  color: GhostWhite;
+  color: #F4F4F4;
   overflow: hidden;
   z-index: 0;
   height: 100%;
@@ -110,7 +110,7 @@ nav {
 .intro-goals {
   text-align: center;
   position: relative;
-  margin: 10px 30px; }
+  margin: 20px 30px; }
   .intro-goals h2 {
     font-size: 50px;
     font-weight: bolder;
@@ -129,7 +129,8 @@ nav {
       text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: center; }
+      justify-content: center;
+      margin-bottom: 40px; }
       .intro-goals div div h3 {
         font-size: 30px;
         font-weight: bolder; }
@@ -143,3 +144,31 @@ nav {
         font-size: 20px;
         max-width: 250px;
         margin: 0 auto; }
+
+.intro-userstories {
+  margin: 20px 0;
+  background: url("../assets/user_story_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: #F4F4F4; }
+  .intro-userstories h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 1.5em;
+    display: inline-block;
+    margin: 3% 0 3% 6%; }
+  .intro-userstories div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .intro-userstories div div {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1.0em;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      max-width: 250px;
+      margin: 25px 5px; }
