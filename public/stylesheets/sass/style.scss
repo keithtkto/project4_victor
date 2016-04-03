@@ -2,7 +2,7 @@ $red: #ed3d37;
 $greenish: #00D3CC;
 $blueish: #47BBD7;
 $offwhite: #F4F4F4;
-$darkblue: #211F56;
+$almostblack: #2A2A2A;
 
 
 * {
@@ -199,7 +199,7 @@ nav {
 }
 
 .intro-userstories {
-  margin: 20px 0;
+  margin: 50px;
   background: url("../assets/user_story_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -227,5 +227,71 @@ nav {
       max-width: 250px;
       margin: 25px 5px;
     }
+  }
+}
+
+
+footer {
+  background-color: $almostblack;
+  color: $offwhite;
+  min-height: 200px;
+
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 30px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      padding-top: 8px;
+
+      ul {
+        padding: 0;
+      }
+
+    }
+
+    a {
+      text-decoration: none;
+      color: $offwhite;
+    }
+
+    h4 {
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+
+    li {
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    .badge {
+      width: 130px;
+      height: 40px;
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+
+
+      img {
+        max-width:100%;
+        max-height:100%;
+      }
+    }
+
+    .badge:hover {
+        opacity: 0.75;
+        filter: alpha(opacity=60); /* For IE8 and earlier */
+        cursor: pointer;
+        cursor: hand;
+    }
+  }
+  .footer-company {
+    clear: bottom;
+    padding-bottom: 20px;
   }
 }

@@ -29,14 +29,10 @@
         url:          "/login",
         templateUrl:  "/js/splash_templates/login.html"
       })
-      .state("signin", {
-        url:          "/signin",
-        templateUrl:  "/js/splash_templates/signin.html"
-      })
       .state("download", {
         url:          "/download",
         templateUrl:  "/js/splash_templates/download.html"
-      })
+      });
 
     $urlRouterProvider.otherwise("/");
 
