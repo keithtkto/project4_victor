@@ -20,16 +20,22 @@
 <body>
   <header>
     <nav>
-      <a ui-sref="welcome"><h2>VICTOR</h2><img src="" alt=""></a>
-      <ul class="nav-bar-right">
-        <li><a ui-sref="theapp">THE APP</a></li>
-        <li><a ui-sref="ourgoals">OUR GOALS</a></li>
-        <li><a ui-sref="aboutus">ABOUT US</a></li>
-        <li><a ui-sref="login">LOG IN</a></li>
-        <li><a ui-sref="download">DOWNLOAD</a></li>
-      </ul>
+      <div>
+        <div>
+          <a ui-sref="welcome"><img src="/assets/victor.png" alt=""></a>
+        </div>
+        <ul class="nav-bar-right">
+          <li><a ui-sref="theapp">THE APP</a></li>
+          <li><a ui-sref="ourgoals">OUR GOALS</a></li>
+          <li><a ui-sref="aboutus">ABOUT US</a></li>
+          <li><a ui-sref="login">LOG IN</a></li>
+          <li class="download"><a ui-sref="download">DOWNLOAD</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
+
+
   <main ui-view>
     <!-- ng stuff goes in here -->
   </main>

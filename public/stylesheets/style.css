@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 html, body {
   margin: 0px;
   padding: 0px;
@@ -5,8 +8,7 @@ html, body {
 
 body {
   font: 1em/1.25, Arial, Helvetica, sans-serif;
-  font-family: 'Raleway', sans-serif;
-  background-color: blue; }
+  font-family: 'Raleway', sans-serif; }
 
 /* Headlines */
 h1, h2, h3, h4, h5, h6 {
@@ -17,5 +19,50 @@ h1, h2, h3, h4, h5, h6 {
 
 ul {
   list-style-type: none;
+  display: inline; }
+
+nav {
+  width: 100%;
   display: inline;
-  color: white; }
+  margin-top: 15px; }
+  nav div {
+    display: inline; }
+  nav img {
+    width: 200px;
+    height: auto;
+    margin-left: 25px;
+    margin-top: 15px; }
+  nav ul {
+    float: right;
+    margin-top: 35px; }
+    nav ul li {
+      display: inline;
+      margin-right: 25px; }
+      nav ul li a {
+        color: GhostWhite;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none; }
+    nav ul .download {
+      border: solid 4px red;
+      border-radius: 90px;
+      padding: 13px 11px 10px 11px;
+      margin-right: 30px; }
+
+.video-container {
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 0;
+  height: 100%; }
+  .video-container video {
+    padding: 0px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden; }
