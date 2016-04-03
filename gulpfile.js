@@ -9,8 +9,8 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./public/stylesheets'));
 });
 
-gulp.task('sass:watch', function () {
-  gulp.watch('./public/stylesheets/sass/**/*.scss', ['default']);
-});
+gulp.watch(['./public/stylesheets/sass/**/*.scss', 'src/**/*.css'], ['default']);
+
+
 
 gulp.task('default', ['sass']);
