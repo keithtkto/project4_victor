@@ -101,8 +101,45 @@ nav {
     max-height: 100%; }
 
 .badge:hover {
-  opacity: 0.6;
+  opacity: 0.75;
   filter: alpha(opacity=60);
   /* For IE8 and earlier */
   cursor: pointer;
   cursor: hand; }
+
+.intro-goals {
+  text-align: center;
+  position: relative;
+  margin: 10px 30px; }
+  .intro-goals h2 {
+    font-size: 50px;
+    font-weight: bolder;
+    margin-top: 1.5em;
+    border: solid black 3px;
+    border-radius: 40px;
+    display: inline-block;
+    cursor: pointer;
+    cursor: hand;
+    padding: 10px 30px; }
+  .intro-goals div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .intro-goals div div {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .intro-goals div div h3 {
+        font-size: 30px;
+        font-weight: bolder; }
+      .intro-goals div div img {
+        width: 250px;
+        height: 250px;
+        margin: 0; }
+      .intro-goals div div #organize-icon {
+        margin: 24px 0 0 0; }
+      .intro-goals div div p {
+        font-size: 20px;
+        max-width: 250px;
+        margin: 0 auto; }
