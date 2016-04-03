@@ -10,15 +10,16 @@ html, body {
 
 body {
   font: 1em/1.25, Arial, Helvetica, sans-serif;
-  font-family: 'Raleway', sans-serif;
+  font-family: Raleway, sans-serif;
 }
+
 
 /* Headlines */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   font-weight: normal;
-  font-family: 'Raleway', Helvetica, sans-serif;
+  font-family: Raleway, Helvetica, sans-serif;
 }
 
 ul {
@@ -66,12 +67,11 @@ nav {
 
 
 .video-container {
-  left: 0;
-  top: 0;
-
+  color: GhostWhite;
   overflow: hidden;
   z-index: 0;
   height: 100%;
+  text-align: center;
 
   video {
     padding: 0px;
@@ -85,4 +85,57 @@ nav {
     z-index: -1000;
     overflow: hidden;
   }
+
+
+  .intro-text {
+    h1 {
+      font-size: 65px;
+      font-weight: bolder;
+      margin: 0.5em;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin: 2.0em;
+      font-weight: 300;
+
+    }
+    h3 {
+      font-size: 30px;
+      margin: 1.0em;
+      color: HoneyDew;
+      padding: 15px;
+      border-radius: 40px;
+      display: inline-block;
+      background-color: rgba(0,0,0,0.3);
+      cursor: pointer;
+      cursor: hand;
+    }
+  }
+}
+
+.intro-badges {
+  position: relative;
+  float: right;
+}
+
+.badge {
+  width: 190px;
+  height: 60px;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  margin-right: 15px;
+  margin-top: 10px;
+
+  img {
+    max-width:100%;
+    max-height:100%;
+  }
+}
+
+.badge:hover {
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    cursor: pointer;
+    cursor: hand;
 }
