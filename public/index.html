@@ -4,19 +4,22 @@
   <title>Victor - Your personal medical regiment reminder</title>
   <meta charset="utf-8">
 
+
+
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 
 
+
   <!-- If you must use outside libs that aren't Angular-specific, include them BEFORE Angular. -->
   <script src="/js/vendor/jwt-decode.2.0.1.js"></script>
 
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+  <script src="/js/vendor/angularjs.1.5.3.js"></script>
+  <!-- <script src="/js/vendor/angularjs_resources.1.5.2.js"></script> -->
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
-
 </head>
 <body>
   <header>
@@ -35,7 +38,6 @@
       </div>
     </nav>
   </header>
-
 
   <main ui-view>
     <!-- ng stuff goes in here -->
@@ -64,7 +66,7 @@
         </ul>
       </div>
 
-      <div class="" footer-media">
+      <div class="">
         <h4><a href="#">Media</a></h4>
         <ul>
             <li><a href="#">In the news</a></li>
@@ -91,7 +93,7 @@
 
     <div class="footer-company">
       <span>©
-        2016 Victor<sup class="registration-sign">®</sup> |
+        2016 Victor<sup class="registration">®</sup> |
         <a href="#">terms and conditions </a> |
         <a href="#"> privacy policy </a>
       </span>

@@ -11,7 +11,7 @@ body {
   font-family: Raleway, sans-serif; }
 
 /* Headlines */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
   font-weight: normal;
@@ -24,7 +24,7 @@ ul {
 nav {
   width: 100%;
   display: inline;
-  margin-top: 15px; }
+  position: absolute; }
   nav div {
     display: inline; }
   nav img {
@@ -66,24 +66,26 @@ nav {
     height: auto;
     z-index: -1000;
     overflow: hidden; }
-  .video-container .intro-text h1 {
-    font-size: 65px;
-    font-weight: bolder;
-    margin: 0.5em; }
-  .video-container .intro-text h2 {
-    font-size: 30px;
-    margin: 2.0em;
-    font-weight: 300; }
-  .video-container .intro-text h3 {
-    font-size: 30px;
-    margin: 1.0em;
-    color: HoneyDew;
-    padding: 15px;
-    border-radius: 40px;
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    cursor: hand; }
+  .video-container .intro-text {
+    margin-top: 11%; }
+    .video-container .intro-text h1 {
+      font-size: 65px;
+      font-weight: bolder;
+      margin: 0.5em; }
+    .video-container .intro-text h2 {
+      font-size: 30px;
+      margin: 2.0em;
+      font-weight: 300; }
+    .video-container .intro-text h3 {
+      font-size: 30px;
+      margin: 1.0em;
+      color: HoneyDew;
+      padding: 15px;
+      border-radius: 40px;
+      display: inline-block;
+      background-color: rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      cursor: hand; }
 
 .intro-badges {
   position: relative;
@@ -215,3 +217,48 @@ footer {
   footer .footer-company {
     clear: bottom;
     padding-bottom: 20px; }
+
+.theapp-victor {
+  background-color: #2A2A2A;
+  color: #F4F4F4;
+  padding: 20px; }
+  .theapp-victor h1 {
+    font-size: 60px;
+    margin-top: 20px; }
+  .theapp-victor p {
+    margin: 0;
+    margin-top: 20px;
+    max-width: 80%; }
+
+.theapp-facts {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #2d6da4;
+  padding-top: 40px; }
+  .theapp-facts h3 {
+    font-size: 27px;
+    padding: 30px; }
+  .theapp-facts span {
+    font-weight: bolder; }
+  .theapp-facts img {
+    width: 120px;
+    height: 120px; }
+
+.theapp-problems {
+  background-image: url("../assets/sickkid.jpg");
+  color: #F4F4F4;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: 0;
+  height: 100%;
+  text-align: left;
+  padding-bottom: 100px; }
+  .theapp-problems > div {
+    margin-top: 11%; }
+    .theapp-problems > div h1 {
+      font-size: 50px; }
