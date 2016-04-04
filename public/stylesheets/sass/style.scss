@@ -302,6 +302,15 @@ footer {
     clear: bottom;
     padding-bottom: 20px;
   }
+
+  .social {
+    display: inline;
+    img {
+      margin-right: 5px;
+      width: 30px;
+      height: 30px;
+    }
+  }
 }
 
 
@@ -415,7 +424,7 @@ footer {
 
 .signup-form {
   text-align: left;
-  padding-top: 11%;
+  padding: 11% 0 11% 0;
   max-width: 815px;
   margin: 0 auto;
 
@@ -430,7 +439,9 @@ footer {
   }
 
   h1 {
-    padding: 10px 25px;
+    font-size: 50px;
+    padding: 10px 30px;
+    font-weight: bolder;
   }
   input {
     padding: 15px 60px;
@@ -477,7 +488,7 @@ footer {
 
 .login-form {
   text-align: left;
-  padding-top: 11%;
+  padding: 11% 0 11% 0;
   max-width: 810px;
   margin: 0 auto;
   > div {
@@ -491,7 +502,9 @@ footer {
   }
 
   h1 {
-    padding: 10px 25px;
+    font-size: 50px;
+    padding: 10px 30px;
+    font-weight: bolder;
   }
   input {
     padding: 15px 60px;

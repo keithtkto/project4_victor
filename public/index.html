@@ -40,7 +40,7 @@
   </main>
 
 
-  <footer>
+  <footer ng-hide="'login'| isState" ng-if="!'signup'| isState">
     <div>
       <div class="footer-download">
         <h4><a ui-sref="download">DOWNLOAD</a></h4>
@@ -75,15 +75,15 @@
         <ul>
           <li><a href="#">info@victorapp.com</a></li>
         </ul>
+        <div class="social">
+          <a href="#" target="_blank"><img src="/assets/white-facebook-256.png" alt="white color fb"></a>
+          <a href="#" target="_blank"><img src="/assets/white-twitter-256.png" alt="white color twitter"></a>
+          <a href="#" target="_blank"><img src="/assets/white-linkedin-256.png" alt="white color linkedin"></a>
+        </div>
       </div>
 
 
 
-      <div class="footer-col footer-col-social">
-        <a href="#" target="_blank"><i class="im-facebook"></i></a>
-        <a href="#" target="_blank"><i class="im-twitter"></i></a>
-        <a href="#" target="_blank"><i class="im-linkedin im-linkedin-footer"></i></a>
-      </div>
     </div>
 
 
