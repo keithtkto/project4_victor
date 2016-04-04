@@ -21,6 +21,8 @@
         zipCode:   "90026"
       };
 
+      vm.nofooter = true;
+
       vm.submitSignUp = submitSignUp;
 
 
