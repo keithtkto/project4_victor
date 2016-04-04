@@ -23,7 +23,9 @@
       })
       .state("signup", {
         url:          "/signup",
-        templateUrl:  "/js/splash_templates/signup.html"
+        templateUrl:  "/js/splash_templates/signup.html",
+        controller:   "SignupController",
+        controllerAs: "vm"
       })
       .state("login", {
         url:          "/login",

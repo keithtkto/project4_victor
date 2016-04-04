@@ -7,7 +7,7 @@ var userSchema = new mongoose.Schema({
   lastName:       { type: String, required: true },
   cellNumber:     { type: String },
   dob:            { type: String, required: true },
-  zipCode:       { type: String }
+  zipCode:        { type: String }
 });
 
 // Add bcrypt hashing to model (works on a password field)!
