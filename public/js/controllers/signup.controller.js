@@ -5,9 +5,9 @@
     .module("victor")
     .controller("SignupController", SignupController)
 
-    SignupController.$inject = ["$log", "$state", "authService"]
+    SignupController.$inject = ["$log", "$state", "authService", "userService"]
 
-    function SignupController($log, $state, authService) {
+    function SignupController($log, $state, authService, userService) {
       $log.info("signup controller")
       var vm = this;
 
@@ -27,6 +27,21 @@
 
       function submitSignUp() {
         $log.info("signup click")
+        userService
+          .create(vm.signUp)
+          .then(function(res){
+            $log.info("login data from controller", res.config.data)
+            return authService.logIn(res.config.data)
+          })
+          .then(function(decodedToken){
+            $log.debug('Logged in!', decodedToken);
+          }, function(err) {
+            if (err.status === 409) vm.conflict = true;
+                $log.debug('Conflicts with some rule already established', err);
+
+          });
+
+
       }
 
 

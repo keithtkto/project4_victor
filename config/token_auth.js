@@ -16,9 +16,10 @@ module.exports = {
 // changes to what your token looks like here.
 function extractPayload(user, options) {
   return {
-    _id:   user._id,
-    email: user.email,
-    name:  user.name,
+    _id:        user._id,
+    email:      user.email,
+    firstName:  user.firstName,
+    lastName:   user.lastName,
     use:   [        // Can be used to authorize certain
       'public_api', // aspects of the API. (Ie: scopes…) This
       'user'        // token authorizes any public routes and
