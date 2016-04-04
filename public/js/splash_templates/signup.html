@@ -1,42 +1,40 @@
 <div class="signup-form">
   <div>
    <h1>Sign Up</h1>
-
-      <form ng-submit="vm.submitSignUp();">
+      <form name="signUpForm" ng-submit="vm.submitSignUp();">
+        <small ng-show="vm.conflict" style="color: #ed3d37;" class="text-danger"><em>Email exists, please use a different email.</em></small>
+        <small ng-show="vm.missingField" style="color: #ed3d37;" class="text-danger"><em>Please fill in the required fields</em></small>
         <div class="form-group">
-          <input ng-model="vm.signUp.firstName" type="text" class="form-control" id="signUpFirstName" placeholder="First Name">
-          <input ng-model="vm.signUp.lastName" type="text" class="form-control" id="signUpLastName" placeholder="Last Name">
+          <input ng-model="vm.signUp.firstName" ng-class="{'red-warning': vm.missingField}" type="text" class="form-control" id="signUpFirstName" placeholder="First Name*">
+          <input ng-model="vm.signUp.lastName" ng-class="{'red-warning': vm.missingField}" type="text" class="form-control" id="signUpLastName" placeholder="Last Name*">
         </div>
         <div class="form-group">
-          <input ng-model="vm.signUp.email" type="email" ng-class="{'red-border': vm.conflict}" class="form-control" id="exampleInputEmail1" placeholder="Email">
-          <small ng-show="vm.conflict" class="text-danger"><em>Email exists…</em></small>
+          <input ng-model="vm.signUp.email" ng-class="{'red-warning': vm.missingField, 'red-warning': vm.conflict}" type="email" ng-class="{'red-warning': vm.conflict}" class="form-control" id="exampleInputEmail1" placeholder="Email*">
           <input ng-model="vm.signUp.cellNumber" type="text" class="form-control" id="signUpCellphone" placeholder="Cell Number XXX-XXX-XXXX">
         </div>
         <div class="form-group">
-          <input ng-model="vm.signUp.dob" type="date" class="form-control" id="signUpDOB" placeholder="Date of Birth">
+          <input ng-model="vm.signUp.dob" ng-class="{'red-warning': vm.missingField}" type="date" class="form-control" id="signUpDOB" placeholder="Date of Birth*">
           <input ng-model="vm.signUp.zipCode" type="text" class="form-control" id="signUpZipCode" placeholder="ZipCode XXXXX">
         </div>
         <div class="form-group">
-          <input ng-model="vm.signUp.password" type="password" class="form-control" id="signUpPassword" placeholder="Password">
-          <input ng-model="vm.signUp.passwordConfirmation" type="password" class="form-control" id="signUpPasswordConfirm" placeholder="Confirm Password">
+          <input ng-model="vm.signUp.password" ng-class="{'red-warning': vm.missingField}" type="password" class="form-control" id="signUpPassword" placeholder="Password*">
+          <input ng-model="vm.signUp.passwordConfirmation" ng-class="{'red-warning': vm.missingField}" type="password" class="form-control" id="signUpPasswordConfirm" placeholder="Confirmation Password*">
+          <small ng-if="vm.signUp.password !== vm.signUp.passwordConfirmation" style="color: #ed3d37;">Confirmation password does not match password</small>
+
         </div>
         <div class="signup-submit">
-          <span>By clicking “create account”, I agree to the Terms of Service and Privacy Policy</span>
           <br>
-          <button type="submit" class="btn btn-default">CREATE ACCOUNT</button>
+          <strong>
+            <p>By clicking “create account”, I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
+          </strong>
+          <button type="submit" class="btn btn-default" ng-disabled="signUpForm.$invalid || vm.signUp.password !== vm.signUp.passwordConfirmation">CREATE ACCOUNT</button>
         </div>
       </form>
 
       <p>
         <strong>
-          Already registered,
-          <a class="underline" ui-sref="login"><u>Sign In</u></a>.
+          Already registered, <a class="" ui-sref="login">Sign In</a>.
         </strong>
-      </p>
-
-      <p>
-        If you can't remember your password,
-        <a class="underline"><u>request a new one</u>.</a>
       </p>
     </div>
   </div>

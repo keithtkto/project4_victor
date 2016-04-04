@@ -36,12 +36,11 @@
           .then(function(decodedToken){
             $log.debug('Logged in!', decodedToken);
           }, function(err) {
-            if (err.status === 409) vm.conflict = true;
-                $log.debug('Conflicts with some rule already established', err);
-
+            if (err.status === 409) vm.conflict = true, vm.missingField = false;
+                $log.debug('409 same email', err);
+            if (err.status === 422) vm.missingField = true, vm.conflict = false;
+                $log.debug('422 missing fields', err);
           });
-
-
       }
 
 

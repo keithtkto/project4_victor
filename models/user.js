@@ -6,7 +6,7 @@ var userSchema = new mongoose.Schema({
   firstName:      { type: String, required: true },
   lastName:       { type: String, required: true },
   cellNumber:     { type: String },
-  dob:            { type: String, required: true },
+  dob:            { type: String },
   zipCode:        { type: String }
 });
 
