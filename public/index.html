@@ -17,86 +17,10 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
 </head>
-<body>
-  <header>
-    <nav>
-      <div>
-        <div>
-          <a ui-sref="welcome"><img src="/assets/victor.png" alt=""></a>
-        </div>
-        <ul class="nav-bar-right">
-          <li><a ui-sref="theapp">THE APP</a></li>
-          <li><a ui-sref="aboutus">ABOUT US</a></li>
-          <li><a ui-sref="signup">SIGN UP</a></li>
-          <li><a ui-sref="login">LOG IN</a></li>
-          <li class="download"><a ui-sref="download">DOWNLOAD</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <main ui-view>
-    <!-- ng stuff goes in here -->
-  </main>
+<body ui-view>
 
 
-  <footer ng-if="('welcome'| isState) ||  ('theapp'| isState) ||  ('aboutus'| isState) || ('download'| isState) ">
-    <div>
-      <div class="footer-download">
-        <h4><a ui-sref="download">DOWNLOAD</a></h4>
-        <div class="footer-badges">
-          <div class="apple-badge badge">
-            <a><img src="/assets/app_store_badge.png" alt="apple-store-badge"></a>
-          </div>
-          <div class="google-badge badge">
-            <a><img src="/assets/en_play_badge.png" alt="google-store-badge"></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-careers">
-        <h4><a href="#">CAREERS</a></h4>
-        <ul>
-            <li><a href="#">Benefits</a></li>
-            <li><a href="#">Current Openings</a></li>
-        </ul>
-      </div>
-
-      <div class="">
-        <h4><a href="#">Media</a></h4>
-        <ul>
-            <li><a href="#">In the news</a></li>
-            <li><a href="#">Press releases</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-contact">
-        <h4><a href="#">Contact</a></h4>
-        <ul>
-          <li><a href="#">info@victorapp.com</a></li>
-        </ul>
-        <div class="social">
-          <a href="#" target="_blank"><img src="/assets/white-facebook-256.png" alt="white color fb"></a>
-          <a href="#" target="_blank"><img src="/assets/white-twitter-256.png" alt="white color twitter"></a>
-          <a href="#" target="_blank"><img src="/assets/white-linkedin-256.png" alt="white color linkedin"></a>
-        </div>
-      </div>
-
-
-
-    </div>
-
-
-    <div class="footer-company">
-      <span>©
-        2016 Victor<sup class="registration">®</sup> |
-        <a href="#">terms and conditions </a> |
-        <a href="#"> privacy policy </a>
-      </span>
-    </div>
-
-  </footer>
-
+</body>
   <script src="/js/app.module.js"></script>
   <script src="/js/app.routes.js"></script>
 
@@ -105,6 +29,4 @@
   <script src="/js/services/auth.service.js"></script>
 
   <script src="/js/controllers/signup_in.controller.js"></script>
-
-</body>
 </html>

@@ -1,6 +1,6 @@
 $red: #ed3d37;
-$greenish: #00D3CC;
-$blueish: #2d6da4;
+$greenish: #99f499;
+$blueish: #4e93cf;
 $offwhite: #F4F4F4;
 $almostblack: #2A2A2A;
 
@@ -429,6 +429,7 @@ footer {
   margin: 0 auto;
 
   > div {
+    background-color: $offwhite;
     border-radius: 40px;
     border: 4px solid black;
     padding: 50px;
@@ -492,6 +493,7 @@ footer {
   max-width: 810px;
   margin: 0 auto;
   > div {
+    background-color: $offwhite;
     border-radius: 40px;
     border: 4px solid black;
     padding: 50px;
@@ -516,9 +518,6 @@ footer {
     min-width: 600px;
   }
 
-
-  // text-align: ;
-
   .login-submit {
     text-align: right;
     button {
@@ -540,6 +539,12 @@ footer {
         text-align: left;
     }
   }
+}
+
+.login-background {
+    background-color: $blueish;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .red-warning {

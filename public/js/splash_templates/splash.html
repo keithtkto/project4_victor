@@ -1,0 +1,77 @@
+ <header>
+    <nav>
+      <div>
+        <div>
+          <a ui-sref="splash.welcome"><img src="/assets/victor.png" alt=""></a>
+        </div>
+        <ul class="nav-bar-right">
+          <li><a ui-sref="splash.theapp">THE APP</a></li>
+          <li><a ui-sref="splash.aboutus">ABOUT US</a></li>
+          <li><a ui-sref="splash.signup">SIGN UP</a></li>
+          <li><a ui-sref="splash.login">LOG IN</a></li>
+          <li class="download"><a ui-sref="splash.download">DOWNLOAD</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main ui-view>
+    <!-- ng stuff goes in here -->
+  </main>
+
+<footer ng-if="('splash.welcome'| isState) ||  ('splash.theapp'| isState) ||  ('splash.aboutus'| isState) || ('splash.download'| isState) ">
+    <div>
+      <div class="footer-download">
+        <h4><a ui-sref="download">DOWNLOAD</a></h4>
+        <div class="footer-badges">
+          <div class="apple-badge badge">
+            <a><img src="/assets/app_store_badge.png" alt="apple-store-badge"></a>
+          </div>
+          <div class="google-badge badge">
+            <a><img src="/assets/en_play_badge.png" alt="google-store-badge"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-careers">
+        <h4><a href="#">CAREERS</a></h4>
+        <ul>
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">Current Openings</a></li>
+        </ul>
+      </div>
+
+      <div class="">
+        <h4><a href="#">Media</a></h4>
+        <ul>
+            <li><a href="#">In the news</a></li>
+            <li><a href="#">Press releases</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-contact">
+        <h4><a href="#">Contact</a></h4>
+        <ul>
+          <li><a href="#">info@victorapp.com</a></li>
+        </ul>
+        <div class="social">
+          <a href="#" target="_blank"><img src="/assets/white-facebook-256.png" alt="white color fb"></a>
+          <a href="#" target="_blank"><img src="/assets/white-twitter-256.png" alt="white color twitter"></a>
+          <a href="#" target="_blank"><img src="/assets/white-linkedin-256.png" alt="white color linkedin"></a>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+    <div class="footer-company">
+      <span>©
+        2016 Victor<sup class="registration">®</sup> |
+        <a href="#">terms and conditions </a> |
+        <a href="#"> privacy policy </a>
+      </span>
+    </div>
+
+  </footer>

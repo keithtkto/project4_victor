@@ -244,7 +244,7 @@ footer {
   display: block;
   text-align: center;
   margin: 0 auto;
-  background-color: #2d6da4;
+  background-color: #4e93cf;
   padding-top: 40px; }
   .theapp-facts h3 {
     font-size: 27px;
@@ -318,6 +318,7 @@ footer {
   max-width: 815px;
   margin: 0 auto; }
   .signup-form > div {
+    background-color: #F4F4F4;
     border-radius: 40px;
     border: 4px solid black;
     padding: 50px; }
@@ -349,7 +350,7 @@ footer {
   .signup-form .signup-submit {
     text-align: right; }
     .signup-form .signup-submit button {
-      background-color: #00D3CC;
+      background-color: #99f499;
       border: 3px solid black;
       font-size: 16px;
       font-weight: bolder;
@@ -366,6 +367,7 @@ footer {
   max-width: 810px;
   margin: 0 auto; }
   .login-form > div {
+    background-color: #F4F4F4;
     border-radius: 40px;
     border: 4px solid black;
     padding: 50px; }
@@ -386,7 +388,7 @@ footer {
   .login-form .login-submit {
     text-align: right; }
     .login-form .login-submit button {
-      background-color: #00D3CC;
+      background-color: #99f499;
       border: 3px solid black;
       font-size: 16px;
       font-weight: bolder;
@@ -398,6 +400,11 @@ footer {
       min-width: 300px; }
     .login-form .login-submit {
       text-align: left; } }
+
+.login-background {
+  background-color: #4e93cf;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .red-warning {
   background: #ed3d37;

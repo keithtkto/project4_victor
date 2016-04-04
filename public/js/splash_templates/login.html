@@ -1,24 +1,27 @@
-<div class="login-form">
-  <div>
-   <h1>Log in</h1>
+
+<div class="login-background">
+  <div class="login-form">
     <div>
+     <h1>Log in</h1>
+      <div>
 
-      <form name="logInForm" ng-submit="vm.submitlogIn();">
+        <form name="logInForm" ng-submit="vm.submitlogIn();">
 
-        <div class="form-group">
-          <input ng-model="vm.logIn.email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <input ng-model="vm.logIn.password" type="password" class="form-control" id="logInPassword" placeholder="Password">
-        </div>
-        <div class="login-submit">
-          <button type="submit" class="btn btn-default">LOG IN</button>
-        </div>
-      </form>
+          <div class="form-group">
+            <input ng-model="vm.logIn.email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input ng-model="vm.logIn.password" type="password" class="form-control" id="logInPassword" placeholder="Password">
+          </div>
+          <div class="login-submit">
+            <button type="submit" class="btn btn-default">LOG IN</button>
+          </div>
+        </form>
 
-      <p>
-        If you can't remember your password, <a href="">click here!</a>
-      </p>
+        <p>
+          If you can't remember your password, <a href="">click here!</a>
+        </p>
+      </div>
     </div>
   </div>
 </div>

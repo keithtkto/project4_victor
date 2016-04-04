@@ -42,6 +42,7 @@
           })
           .then(function(decodedToken){
             $log.debug('Logged in!', decodedToken);
+            $state.go("user");
           }, function(err) {
             if (err.status === 409) vm.conflict = true, vm.missingField = false;
                 $log.debug('409 same email', err);
@@ -55,6 +56,7 @@
         authService.logIn(vm.logIn)
           .then(function(decodedToken){
             $log.debug('Logged in!', decodedToken);
+            $state.go("user")
           }, function(err) {
             if (err.status === 409) vm.conflict = true, vm.missingField = false;
                 $log.debug('409 same email', err);

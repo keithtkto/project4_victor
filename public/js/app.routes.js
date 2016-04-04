@@ -9,33 +9,41 @@
 
   function appRoutes($urlRouterProvider, $stateProvider){
     $stateProvider
-      .state("welcome", {
+      .state("splash", {
+        templateUrl:  "js/splash_templates/splash.html"
+      })
+      .state("splash.welcome", {
         url:          "/",
         templateUrl:  "/js/splash_templates/welcome.html",
       })
-      .state("theapp", {
+      .state("splash.theapp", {
         url:          "/theapp",
         templateUrl:  "/js/splash_templates/theapp.html"
       })
-      .state("aboutus", {
+      .state("splash.aboutus", {
         url:          "/aboutus",
         templateUrl:  "/js/splash_templates/aboutus.html",
       })
-      .state("signup", {
+      .state("splash.signup", {
         url:          "/signup",
         templateUrl:  "/js/splash_templates/signup.html",
         controller:   "SignupController",
         controllerAs: "vm"
       })
-      .state("login", {
+      .state("splash.login", {
         url:          "/login",
         templateUrl:  "/js/splash_templates/login.html",
         controller:   "SignupController",
         controllerAs: "vm"
       })
-      .state("download", {
+      .state("splash.download", {
         url:          "/download",
         templateUrl:  "/js/splash_templates/download.html"
+      })
+      .state("user", {
+        url:          "/user",
+        templateUrl:  "/js/user_templates/user.html",
+        authorized: true
       });
 
     $urlRouterProvider.otherwise("/");
