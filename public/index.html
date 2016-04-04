@@ -40,7 +40,7 @@
   </main>
 
 
-  <footer ng-hide="('signup'| isState) || ('login'| isState) ">
+  <footer ng-if="('welcome'| isState) ||  ('theapp'| isState) ||  ('aboutus'| isState) || ('download'| isState) ">
     <div>
       <div class="footer-download">
         <h4><a ui-sref="download">DOWNLOAD</a></h4>

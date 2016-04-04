@@ -21,10 +21,15 @@
         zipCode:   "90026"
       };
 
+      vm.logIn = {
+        email:    "kts@victor.com",
+        password: "12345"
+      }
+
       vm.nofooter = true;
 
       vm.submitSignUp = submitSignUp;
-
+      vm.submitlogIn  = submitlogIn;
 
 
       function submitSignUp() {
@@ -44,6 +49,20 @@
                 $log.debug('422 missing fields', err);
           });
       }
+
+      function submitlogIn() {
+        $log.info("log in click");
+        authService.logIn(vm.logIn)
+          .then(function(decodedToken){
+            $log.debug('Logged in!', decodedToken);
+          }, function(err) {
+            if (err.status === 409) vm.conflict = true, vm.missingField = false;
+                $log.debug('409 same email', err);
+            if (err.status === 422) vm.missingField = true, vm.conflict = false;
+                $log.debug('422 missing fields', err);
+          });
+      }
+
 
 
 

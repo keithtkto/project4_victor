@@ -12,7 +12,7 @@
 
     var service = {
       logIn: logIn,
-
+      isLoggedIn:   isLoggedIn,
     }
 
     return service;
@@ -31,6 +31,27 @@
         return token.decode(res.data.token);
       })
     }
+
+    function isLoggedIn() {
+      checkExpToken()
+      return (token.retrieve() != null);
+    }
+
+    function checkExpToken() {
+      var tokenData = token.decode();
+
+      if (tokenData) {
+
+        tokenData.expiresAt = Date(tokenData.exp);
+
+        delete tokenData.exp;
+        delete tokenData.iat;
+        if (!tokenData) $log.debug("exp deleted:", tokenData);
+      }
+
+      $log.debug("Current user retrieved:", tokenData);
+    }
+
 
 
   }
