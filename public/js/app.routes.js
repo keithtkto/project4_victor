@@ -13,17 +13,17 @@
         url:          "/",
         templateUrl:  "/js/splash_templates/welcome.html"
       })
-      .state("ourgoals", {
-        url:          "/ourgoals",
-        templateUrl:  "/js/splash_templates/ourgoals.html"
-      })
       .state("theapp", {
         url:          "/theapp",
         templateUrl:  "/js/splash_templates/theapp.html"
       })
       .state("aboutus", {
-        url:          "/signin",
-        templateUrl:  "/js/splash_templates/signin.html"
+        url:          "/aboutus",
+        templateUrl:  "/js/splash_templates/aboutus.html"
+      })
+      .state("signup", {
+        url:          "/signup",
+        templateUrl:  "/js/splash_templates/signup.html"
       })
       .state("login", {
         url:          "/login",
