@@ -1,9 +1,23 @@
-<div class="user-left-nav">
-  <ul>
-    <li>MY REGIMEN</li>
-    <li>MY PRESCRIPTIONS</li>
-    <li>REPORT</li>
-    <li>MY MEDS</li>
-    <li>MY APPOINTMENTS</li>
-  </ul>
+<div>
+  <div class="user-left-nav">
+    <div>
+      <a ui-sref="splash.welcome"><img src="/assets/victor.png" alt="Logo of Victor "></a>
+    </div>
+    <ul>
+      <li ui-sref="user">MY REGIMEN</li>
+      <li ui-sref="user">MY MEDS</li>
+      <li ui-sref="user">MY REPORT</li>
+      <li ui-sref="user">MY DOCTORS</li>
+      <li ui-sref="user">MY APPOINTMENTS</li>
+      <li ui-sref="user">MY SUPPORTS</li>
+      <li ui-sref="user">MY APPOINTMENTS</li>
+      <li ng-click="vm.logout()">LOG OUT</li>
+    </ul>
+
+  </div>
 </div>
+<main class="user-main" ui-view>
+
+
+</main>
+

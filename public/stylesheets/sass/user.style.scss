@@ -1,0 +1,51 @@
+$red: #ed3d37;
+$greenish: #99f499;
+$blueish: #2c6ba2;
+$offwhite: #F4F4F4;
+$almostblack: #2A2A2A;
+
+
+
+.user-left-nav {
+  float: left;
+  position: fixed;
+  width: 230px;
+  height: 100%;
+  background-color: #4e93cf;
+  overflow: hidden;
+  color: $offwhite;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+
+
+  img {
+    width: 220px;
+    height: 73;
+    margin-bottom: -35px;
+  }
+
+  li {
+    margin: 0 -10px 0 -15px;
+    padding: 15px 0 15px 0;
+  }
+
+  li:hover {
+    background-color: #2c6ba2;
+    cursor: pointer;
+    cursor: hand;
+  }
+
+
+}
+
+.user-main{
+  background-color: $offwhite;
+  margin-left: 220px;
+  position: fixed;
+  height: 100%;
+  width: -webkit-calc(100% - 225px);
+  width:    -moz-calc(100% - 225px);
+  width:         calc(100% - 225px);
+  overflow: scroll;
+}

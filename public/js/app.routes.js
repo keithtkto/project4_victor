@@ -40,10 +40,13 @@
         url:          "/download",
         templateUrl:  "/js/splash_templates/download.html"
       })
+      // user's router begin here
       .state("user", {
         url:          "/user",
         templateUrl:  "/js/user_templates/user.html",
-        authorized: true
+        controller:   "UserController",
+        controllerAs: "vm",
+        authorized:   true
       });
 
     $urlRouterProvider.otherwise("/");
@@ -62,7 +65,7 @@
 
       if (toState.authorized && !authService.isLoggedIn()) {
         $log.debug(`Attempted to go to ${toState.url} but was not logged in.`);
-        $state.go("login");
+        $state.go("splash.login");
         event.preventDefault();
       }
 
