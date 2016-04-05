@@ -5,13 +5,13 @@
 
   <h1>NEW MEDS</h1>
 
-  <form ng-submit="vm.submitnewRegimen()">
+  <form name="newMedForm" ng-submit="vm.submitnewRegimen()">
 
     <div class="col-2">
       <div>
         <label>
           Medication Name
-          <input placeholder="Ex. Tylenol" id="name" name="name" tabindex="1" ng-model="vm.newRegimen.name">
+          <input placeholder="Ex. Tylenol" id="name" name="name" tabindex="1" ng-model="vm.newRegimen.name" ng-required="true">
         </label>
       </div>
     </div>
@@ -53,7 +53,7 @@
     <div class="col-2">
       <label>
         How many times a day?
-        <select tabindex="6" ng-model="vm.frequency" ng-change="vm.generateEmptyArray()">
+        <select tabindex="6" ng-model="vm.frequency" ng-change="vm.generateEmptyArray()" ng-required="true">
           <option ng-repeat="f in vm.quantity track by $index" ng-if="$index < 10" value="{{f}}">{{f}}</option>
         </select>
       </label>
@@ -72,31 +72,36 @@
       </label>
     </div>
 
+
     <div class="col-3" ng-repeat="box in vm.emptyArr track by $index">
       <label class="when">
         When? &nbsp;<strong style="font-weight: bolder;">Slot {{$index + 1}}</strong> &nbsp; &nbsp; &nbsp;
         <div>
-          <select tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].hr">
-            <option ng-repeat="hr in vm.quantity track by $index" ng-if="$index < 12" value="{{hr}}">{{hr}}</option>
+          <select name="hour" tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].hr" ng-required="true" >
+            <option value="">hr</option>
+            <option ng-repeat="hr in vm.quantity track by $index" ng-if="$index < 12" value="{{hr}}" ng-required="true">{{hr}}</option>
           </select> <strong style="font-weight: bolder">:</strong>
           <select tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].min">
             <option ng-repeat="min in [0,15,30,45]" value="{{min}}">{{min}}</option>
           </select>
-          <select tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].apm">
+          <select tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].apm" ng-required="true">
+            <option value="">am</option>
             <option ng-repeat="apm in ['am','pm']" value="{{apm}}">{{apm}}</option>
           </select>
         </div>
       </label>
     </div>
 
-
-
     <div class="col-submit">
-      <button class="submitbtn">Submit</button>
+      <button ng-disable="newMedForm.$invalid" class="submitbtn">Submit</button>
     </div>
+
+
 
   </form>
 </div>
+
+
 
 
 

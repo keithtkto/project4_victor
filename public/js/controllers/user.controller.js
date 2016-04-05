@@ -11,13 +11,13 @@
   function UserController($log, token, $state, $http, rs) {
     $log.info("user controller loaded")
     var vm = this;
-    $log.info("rs", rs)
     vm.logout             = logout;
     vm.user               = token.decode();
     vm.submitnewRegimen   = submitnewRegimen;
     vm.showRegimens       = showRegimens;
     vm.generateEmptyArray = generateEmptyArray;
-    vm.emptyArr           = 0;
+    vm.emptyArr           = 1;
+    vm.generateEmptyArray()
 
 
     vm.doseUnits          = rs.doseUnits;
@@ -54,6 +54,9 @@
       generateNewRegimenInputData(data)
       $log.info('click', data);
       rs.newRegimen(data)
+      .then(function(){
+        // $state.go("user.myregimen")
+      })
       .catch(function(err){
         $log.debug(err)
       });
@@ -82,6 +85,7 @@
           $log.debug("what is input",input)
 
           var apm = vm.emptyArr[idx].apm === "am" ? 0 : 12;
+
 
           input.hour   = parseInt(vm.emptyArr[idx].hr) + apm
           input.hour === 24 ? input.hour = 0 : "";
