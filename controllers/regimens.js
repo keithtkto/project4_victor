@@ -12,7 +12,7 @@ module.exports = {
 function index(req, res, next) {
   User.findById(req.decoded._id).exec()
   .then(function(user){
-    res.json({sucess: user.regimen})
+    res.send(user.regimen)
   })
 }
 
@@ -24,7 +24,7 @@ function create(req, res, next) {
     console.log('create user', user)
     user.regimen.push(req.body)
     user.save()
-    res.json({ success: user.regimen})
+    res.send(user.regimen)
   })
 
 }
