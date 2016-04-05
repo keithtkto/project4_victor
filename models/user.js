@@ -7,6 +7,7 @@ var regimenSchema = new mongoose.Schema({
   name:           {type: String, required: true},
   dosage:         String,
   quanity:        Number,
+  direction:      String,
   description:    String,
   reminder:       {type: Boolean, default: true},
   hour:           Number,

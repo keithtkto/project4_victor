@@ -12,34 +12,34 @@
       .state("splash", {
         templateUrl:  "js/splash_templates/splash.html"
       })
-      .state("splash.welcome", {
-        url:          "/",
-        templateUrl:  "/js/splash_templates/welcome.html",
-      })
-      .state("splash.theapp", {
-        url:          "/theapp",
-        templateUrl:  "/js/splash_templates/theapp.html"
-      })
-      .state("splash.aboutus", {
-        url:          "/aboutus",
-        templateUrl:  "/js/splash_templates/aboutus.html",
-      })
-      .state("splash.signup", {
-        url:          "/signup",
-        templateUrl:  "/js/splash_templates/signup.html",
-        controller:   "SignupController",
-        controllerAs: "vm"
-      })
-      .state("splash.login", {
-        url:          "/login",
-        templateUrl:  "/js/splash_templates/login.html",
-        controller:   "SignupController",
-        controllerAs: "vm"
-      })
-      .state("splash.download", {
-        url:          "/download",
-        templateUrl:  "/js/splash_templates/download.html"
-      })
+        .state("splash.welcome", {
+          url:          "/",
+          templateUrl:  "/js/splash_templates/welcome.html",
+        })
+        .state("splash.theapp", {
+          url:          "/theapp",
+          templateUrl:  "/js/splash_templates/theapp.html"
+        })
+        .state("splash.aboutus", {
+          url:          "/aboutus",
+          templateUrl:  "/js/splash_templates/aboutus.html",
+        })
+        .state("splash.signup", {
+          url:          "/signup",
+          templateUrl:  "/js/splash_templates/signup.html",
+          controller:   "SignupController",
+          controllerAs: "vm"
+        })
+        .state("splash.login", {
+          url:          "/login",
+          templateUrl:  "/js/splash_templates/login.html",
+          controller:   "SignupController",
+          controllerAs: "vm"
+        })
+        .state("splash.download", {
+          url:          "/download",
+          templateUrl:  "/js/splash_templates/download.html"
+        })
       // user's router begin here
       .state("user", {
         url:          "/user",
@@ -48,38 +48,42 @@
         controllerAs: "vm",
         authorized:   true
       })
-      .state("user.welcome", {
-        url:          "/user.welcome",
-        templateUrl:  "/js/user_templates/_welcome.html"
-      })
-      .state("user.myregimen", {
-        url:          "/user.myregimen",
-        templateUrl:  "/js/user_templates/_myregimen.html"
-      })
-      .state("user.mymeds", {
-        url:          "/user.mymeds",
-        templateUrl:  "/js/user_templates/_mymeds.html"
-      })
-      .state("user.myreport", {
-        url:          "/user.myreport",
-        templateUrl:  "/js/user_templates/_myreport.html"
-      })
-      .state("user.mydoctors", {
-        url:          "/user.mydoctors",
-        templateUrl:  "/js/user_templates/_mydoctors.html"
-      })
-      .state("user.myappointments", {
-        url:          "/user.myappointments",
-        templateUrl:  "/js/user_templates/_myappointments.html"
-      })
-      .state("user.mysupport", {
-        url:          "/user.mysupport",
-        templateUrl:  "/js/user_templates/_mysupport.html"
-      })
-      .state("user.contactus", {
-        url:          "/user.contactus",
-        templateUrl:  "/js/user_templates/_contactus.html"
-      })
+        .state("user.welcome", {
+          url:          "/userwelcome",
+          templateUrl:  "/js/user_templates/_welcome.html"
+        })
+        .state("user.myregimen", {
+          url:          "/myregimen",
+          templateUrl:  "/js/user_templates/_myregimen.html"
+        })
+        .state("user.mymeds", {
+          url:          "/mymeds",
+          templateUrl:  "/js/user_templates/_mymeds.html"
+        })
+        .state("user.newmeds", {
+          url:          "/newmeds",
+          templateUrl:  "/js/user_templates/_newmeds.html"
+        })
+        .state("user.myreport", {
+          url:          "/myreport",
+          templateUrl:  "/js/user_templates/_myreport.html"
+        })
+        .state("user.mydoctors", {
+          url:          "/mydoctors",
+          templateUrl:  "/js/user_templates/_mydoctors.html"
+        })
+        .state("user.myappointments", {
+          url:          "/myappointments",
+          templateUrl:  "/js/user_templates/_myappointments.html"
+        })
+        .state("user.mysupport", {
+          url:          "/mysupport",
+          templateUrl:  "/js/user_templates/_mysupport.html"
+        })
+        .state("user.contactus", {
+          url:          "/contactus",
+          templateUrl:  "/js/user_templates/_contactus.html"
+        })
 
     $urlRouterProvider.otherwise("/");
 
