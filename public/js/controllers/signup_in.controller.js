@@ -58,9 +58,9 @@
             $log.debug('Logged in!', decodedToken);
             $state.go("user")
           }, function(err) {
-            if (err.status === 409) vm.conflict = true, vm.missingField = false;
+            if (err.status === 409) vm.missingField = false, vm.conflict = true;
                 $log.debug('409 same email', err);
-            if (err.status === 422) vm.missingField = true, vm.conflict = false;
+            if (err.status === 422) vm.missingField = true;
                 $log.debug('422 missing fields', err);
           });
       }

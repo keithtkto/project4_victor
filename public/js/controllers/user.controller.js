@@ -13,6 +13,7 @@
     var vm = this;
 
     vm.logout = logout;
+    vm.user   = token.decode();
 
 
     function logout() {
@@ -20,6 +21,8 @@
       token.destroy();
       $state.go('splash.welcome')
     }
+
+    function userInfo() {}
 
 
 

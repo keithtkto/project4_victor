@@ -4,18 +4,20 @@
       <a ui-sref="splash.welcome"><img src="/assets/victor.png" alt="Logo of Victor "></a>
     </div>
     <ul>
-      <li ui-sref="user">MY REGIMEN</li>
-      <li ui-sref="user">MY MEDS</li>
-      <li ui-sref="user">MY REPORT</li>
-      <li ui-sref="user">MY DOCTORS</li>
-      <li ui-sref="user">MY APPOINTMENTS</li>
-      <li ui-sref="user">MY SUPPORTS</li>
-      <li ui-sref="user">MY APPOINTMENTS</li>
+      <li ui-sref="user.myregimen">MY REGIMEN</li>
+      <li ui-sref="user.mymeds">MY MEDS</li>
+      <li ui-sref="user.myreport">MY REPORT</li>
+      <li ui-sref="user.mydoctors">MY DOCTORS</li>
+      <li ui-sref="user.myappointments">MY APPOINTMENTS</li>
+      <li ui-sref="user.mysupport">MY SUPPORT</li>
+      <li ui-sref="user.contactus">CONTACT US</li>
       <li ng-click="vm.logout()">LOG OUT</li>
     </ul>
 
   </div>
 </div>
+
+<span class="user-name">Good day, {{vm.user.firstName}} {{vm.user.lastName}}!</span>
 <main class="user-main" ui-view>
 
 

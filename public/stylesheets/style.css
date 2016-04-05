@@ -60,6 +60,7 @@ nav {
   height: 100%;
   text-align: center; }
   .video-container video {
+    background-color: #2A2A2A;
     padding: 0px;
     position: absolute;
     bottom: 0;

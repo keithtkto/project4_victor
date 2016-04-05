@@ -10,7 +10,7 @@
             <input ng-model="vm.signUp.lastName" ng-class="{'red-warning': vm.missingField}" type="text" class="form-control" id="signUpLastName" placeholder="Last Name*">
           </div>
           <div class="form-group">
-            <input ng-model="vm.signUp.email" ng-class="{'red-warning': vm.missingField, 'red-warning': vm.conflict}" type="email" ng-class="{'red-warning': vm.conflict}" class="form-control" id="exampleInputEmail1" placeholder="Email*">
+            <input ng-model="vm.signUp.email" ng-class="{'red-warning': vm.missingField || vm.conflict}" type="email" ng-class="{'red-warning': vm.conflict}" class="form-control" id="exampleInputEmail1" placeholder="Email*">
             <input ng-model="vm.signUp.cellNumber" type="text" class="form-control" id="signUpCellphone" placeholder="Cell Number XXX-XXX-XXXX">
           </div>
           <div class="form-group">

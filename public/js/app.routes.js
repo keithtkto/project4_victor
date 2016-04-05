@@ -47,7 +47,39 @@
         controller:   "UserController",
         controllerAs: "vm",
         authorized:   true
-      });
+      })
+      .state("user.welcome", {
+        url:          "/user.welcome",
+        templateUrl:  "/js/user_templates/_welcome.html"
+      })
+      .state("user.myregimen", {
+        url:          "/user.myregimen",
+        templateUrl:  "/js/user_templates/_myregimen.html"
+      })
+      .state("user.mymeds", {
+        url:          "/user.mymeds",
+        templateUrl:  "/js/user_templates/_mymeds.html"
+      })
+      .state("user.myreport", {
+        url:          "/user.myreport",
+        templateUrl:  "/js/user_templates/_myreport.html"
+      })
+      .state("user.mydoctors", {
+        url:          "/user.mydoctors",
+        templateUrl:  "/js/user_templates/_mydoctors.html"
+      })
+      .state("user.myappointments", {
+        url:          "/user.myappointments",
+        templateUrl:  "/js/user_templates/_myappointments.html"
+      })
+      .state("user.mysupport", {
+        url:          "/user.mysupport",
+        templateUrl:  "/js/user_templates/_mysupport.html"
+      })
+      .state("user.contactus", {
+        url:          "/user.contactus",
+        templateUrl:  "/js/user_templates/_contactus.html"
+      })
 
     $urlRouterProvider.otherwise("/");
 
