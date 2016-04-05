@@ -6,9 +6,9 @@
     .module("victor")
     .controller("UserController", UserController)
 
-  UserController.$inject = ["$log", "tokenService", "$state", "$http"]
+  UserController.$inject = ["$log", "tokenService", "$state", "$http", "regimenService"]
 
-  function UserController($log, token, $state, $http) {
+  function UserController($log, token, $state, $http, regimenService) {
     $log.info("user controller loaded")
     var vm = this;
 
@@ -28,14 +28,8 @@
     function submitnewRegimen() {
 
       $log.info('click', vm.newRegimen)
-      $http({
-          method: "post",
-          url:    "api/me/regimens",
-          data: vm.newRegimen
-        })
-      .then(function(res){
-        $log.info(res.data)
-      })
+      regimenService.newRegimen(vm.newRegimen)
+
 
     }
 
