@@ -57,7 +57,7 @@ function update(req, res, next) {
       // Also, mongoose-bcrypt sets the password as a digest only when
       // .save()-ing, not when .update()-ing! Ridiculous!
       if (req.body.email)    user.email    = req.body.email;
-      if (req.body.name)     user.name     = req.body.name;
+      // if (req.body.name)     user.name     = req.body.name;
       if (req.body.password) user.password = req.body.password;
 
       // The same thing, but sexier:
