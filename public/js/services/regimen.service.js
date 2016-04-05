@@ -26,11 +26,6 @@
 
 
 
-
-
-
-
-
     var regimens = {
          newRegimen:   newRegimen,
          showRegimens: showRegimens,

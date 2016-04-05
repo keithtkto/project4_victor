@@ -22,7 +22,10 @@ function create(req, res, next) {
   User.findById(req.decoded._id).exec()
   .then(function(user){
     console.log('create user', user)
-    user.regimen.push(req.body)
+    req.body.forEach(function(newTask){
+      user.regimen.push(newTask)
+    })
+
     user.save()
     res.send(user.regimen)
   })
