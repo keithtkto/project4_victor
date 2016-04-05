@@ -1,13 +1,26 @@
 var mongoose = require('mongoose'),
     debug    = require('debug')('app:models');
 
+
+var regimenSchema = new mongoose.Schema({
+  created_at:     {type: Date, default: Date.now},
+  name:           {type: String, required: true},
+  dosage:         String,
+  description:    String,
+  reminder:       {type: Boolean, default: true},
+  hour:           Number,
+  minute:         Number
+});
+
 var userSchema = new mongoose.Schema({
+  created_at:     {type: Date, default: Date.now},
   email:          { type: String, required: true, unique: true },
   firstName:      { type: String, required: true },
   lastName:       { type: String, required: true },
   cellNumber:     { type: String },
   dob:            { type: String },
-  zipCode:        { type: String }
+  zipCode:        { type: String },
+  regimen:        [regimenSchema]
 });
 
 // Add bcrypt hashing to model (works on a password field)!
