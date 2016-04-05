@@ -16,13 +16,22 @@
     vm.user               = token.decode();
     vm.submitnewRegimen   = submitnewRegimen;
     vm.showRegimens       = showRegimens;
+    vm.generateEmptyArray = generateEmptyArray;
+
     vm.doseUnits          = rs.doseUnits;
     vm.quantity           = rs.quantity;
 
 
     vm.newRegimen = {name: "123", dosage: "123", description: "123", reminder: true, hour: 1, minute: 30};
 
+    function generateEmptyArray() {
+      var emptyArray = [];
 
+      for (var i = 0; i < vm.frequency; i++) {
+        emptyArray.push("");
+      }
+      vm.emptyArr = emptyArray
+    }
 
 
     function logout() {

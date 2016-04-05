@@ -31,7 +31,7 @@
     <div class="col-q">
       <label>
         Quantity
-        <select tabindex="2" ng-model="vm.newRegimen.quantity">
+        <select tabindex="3" ng-model="vm.newRegimen.quantity">
           <option ng-repeat="q in vm.quantity track by $index" value="{{q}}">{{q}}</option>
         </select>
       </label>
@@ -51,17 +51,20 @@
     </label>
   </div>
 
-  <div class="col-3">
+  <div class="col-4">
     <label>
-      Email
-      <input placeholder="What is your e-mail address?" id="email" name="email" tabindex="4">
+      How many times a day?
+      <select tabindex="3" ng-model="vm.frequency" ng-change="vm.generateEmptyArray()">
+        <option ng-repeat="f in vm.quantity track by $index" ng-if="$index < 10" value="{{f}}">{{f}}</option>
+      </select>
     </label>
   </div>
-  <div class="col-3">
-    <label>
-      Time
-      <select tabindex="5" ng-model="vm.newRegimen.units" ng-options="unit for unit in vm.doseUnits track by $index">
 
+  {{vm.frequency}}
+  <div class="col-4" ng-repeat="box in vm.emptyArr track by $index">
+    <label>
+      When?
+      <select tabindex="5" ng-model="vm.newRegimen.units" ng-options="unit for unit in vm.doseUnits track by $index">
       </select>
     </label>
   </div>
@@ -93,10 +96,8 @@
 
   </form>
   </div>
-<span ng-repeat="unit in vm.doseUnits">
 
- {{unit}}
-</span>
+  {{vm.frequency}}
 
 
 
