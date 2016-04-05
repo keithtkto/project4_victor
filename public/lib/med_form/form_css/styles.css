@@ -31,17 +31,14 @@ input, textarea {
   outline: none;
 }
 
-strong, b { font-weight: bold; }
-em, i { font-style: italic; }
 
 h1 {
   display: block;
   font-size: 3.1em;
   line-height: 1.45em;
-  font-family: 'Laila', serif;
   text-align: center;
   font-weight: bold;
-  color: #555;
+  color: #2A2A2A;
   text-shadow: 1px 1px 0 #fff;
 }
 
@@ -64,7 +61,7 @@ form > div > label, form > div > div > label{
   font-size: 13px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #939393;
+  color: #2A2A2A;
   cursor: pointer;
 }
 
@@ -121,13 +118,13 @@ label > select {
   width: 100%;
   padding: 0;
   color: #555;
-  margin: 16px 0 2px;
+  margin: 16px 0 1px;
   font-weight: 500;
   background: transparent;
   border: none;
   outline: none;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 14px;
+/*  font-family: 'Helvetica Neue', Arial, sans-serif;
+*/  font-size: 14px;
   opacity: .4;
   transition: all linear .3s;
 }
@@ -156,6 +153,15 @@ label > div {
   display: block;
   margin-top: -4px;
   margin-bottom: -1px;
+}
+
+input[type='checkbox'] {
+  margin: 6px;
+}
+
+.when > div > select {
+  width: 30%;
+  display: inline;
 }
 
 

@@ -18,6 +18,7 @@
     vm.showRegimens       = showRegimens;
     vm.generateEmptyArray = generateEmptyArray;
 
+
     vm.doseUnits          = rs.doseUnits;
     vm.quantity           = rs.quantity;
 

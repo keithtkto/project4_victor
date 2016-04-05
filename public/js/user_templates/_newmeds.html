@@ -1,13 +1,12 @@
 <link rel="stylesheet" type="text/css" media="all" href="/lib/med_form/form_css/styles.css">
-<!-- <link rel="stylesheet" type="text/css" media="all" href="/lib/med_form/form_css/switchery.min.css">
-<script type="text/javascript" src="/lib/med_form/form_js/switchery.min.js"></script> -->
 
 
-  <div id="wrapper">
+<div id="wrapper">
 
-  <h1>Horizontal Responsive Form</h1>
+  <h1>NEW MEDS</h1>
 
   <form onsubmit="return false">
+
     <div class="col-2">
       <div>
         <label>
@@ -37,67 +36,68 @@
       </label>
     </div>
 
-  <div class="col-1">
-    <label>
-      Direction
-      <input placeholder="Proper way to take this medicaiton" id="direction" name="direction" tabindex="4">
-    </label>
-  </div>
+    <div class="col-1">
+      <label>
+        Direction
+        <input ng-model="vm.newRegimen.direction" placeholder="Proper way to take this medicaiton" id="direction" name="direction" tabindex="4">
+      </label>
+    </div>
 
-  <div class="col-1">
-    <label>
-      Description
-      <input placeholder="What is the best # to reach you?" id="description" name="description" tabindex="5">
-    </label>
-  </div>
+    <div class="col-1">
+      <label>
+        Description
+        <input ng-model="vm.newRegimen.description" placeholder="What is the best # to reach you?" id="description" name="description" tabindex="5">
+      </label>
+    </div>
 
-  <div class="col-4">
-    <label>
-      How many times a day?
-      <select tabindex="3" ng-model="vm.frequency" ng-change="vm.generateEmptyArray()">
-        <option ng-repeat="f in vm.quantity track by $index" ng-if="$index < 10" value="{{f}}">{{f}}</option>
-      </select>
-    </label>
-  </div>
+    <div class="col-2">
+      <label>
+        How many times a day?
+        <select tabindex="6" ng-model="vm.frequency" ng-change="vm.generateEmptyArray()">
+          <option ng-repeat="f in vm.quantity track by $index" ng-if="$index < 10" value="{{f}}">{{f}}</option>
+        </select>
+      </label>
+    </div>
 
-  {{vm.frequency}}
-  <div class="col-4" ng-repeat="box in vm.emptyArr track by $index">
-    <label>
-      When?
-      <select tabindex="5" ng-model="vm.newRegimen.units" ng-options="unit for unit in vm.doseUnits track by $index">
-      </select>
-    </label>
-  </div>
+    <div class="col-3">
+      <label>Send Reminder</label>
+      <center style="position:relative; margin-bottom:8px;">
+        <input tabindex="7"  type="checkbox" class="js-switch" ng-checked="true" ng-true-value="true" ng-false-value="false" ng-model="vm.newRegimen.reminderYN">
+      </center>
+    </div>
 
-  <div class="col-4">
-    <label>
-      Skills
-      <input placeholder="List a few of your primary skills" id="skills" name="skills" tabindex="6">
-    </label>
-  </div>
-  <div class="col-4">
-    <label>
-      Yrs Experience
-      <input placeholder="How many years of experience?" id="experience" name="experience" tabindex="7">
-    </label>
-  </div>
-  <div class="col-4">
-    <label>Contact References?</label>
-    <center style="position:relative; margin-bottom:8px;"><input type="checkbox" class="js-switch"></center>
-  </div>
-  <div class="col-4 switch">
-    <label>E-mail Updates?</label>
-    <center style="position:relative;margin-bottom:8px;"><input type="checkbox" class="js-switch"></center>
-  </div>
+    <div class="col-q">
+      <label for="">
+        <input tabindex="8" type="text">
+      </label>
+    </div>
 
-  <div class="col-submit">
-    <button class="submitbtn">Submit</button>
-  </div>
+    <div class="col-3" ng-repeat="box in vm.emptyArr track by $index">
+      <label class="when">
+        When? &nbsp;<strong style="font-weight: bolder;">Slot {{$index + 1}}</strong> &nbsp; &nbsp; &nbsp;
+        <div>
+          <select tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].hr">
+            <option ng-repeat="hr in vm.quantity track by $index" ng-if="$index < 12" value="{{hr}}">{{hr}}</option>
+          </select> <strong style="font-weight: bolder">:</strong>
+          <select tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].min">
+            <option ng-repeat="min in [0,15,30,45]" value="{{min}}">{{min}}</option>
+          </select>
+          <select tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].apm">
+            <option ng-repeat="apm in ['am','pm']" value="{{apm}}">{{apm}}</option>
+          </select>
+        </div>
+      </label>
+    </div>
+
+
+
+    <div class="col-submit">
+      <button class="submitbtn">Submit</button>
+    </div>
 
   </form>
-  </div>
+</div>
 
-  {{vm.frequency}}
 
 
 
