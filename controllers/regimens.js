@@ -50,19 +50,17 @@ function destroy(req, res, next) {
 }
 
 function update(req, res, next) {
-  console.log("update req", req.body)
   User.findById(req.decoded._id).exec()
     .then(function(user){
-
       var updatedRegimen = user.regimen.filter(function(task){
         return task.idCode !== req.body[0].idCode
       })
-
-      updatedRegimen.push(req.body)
+      console.log("updated reg pre delete", updatedRegimen)
+      updatedRegimen.push(req.body[0])
 
       user.regimen = updatedRegimen;
-      user.save()
-      console.log('user edit',user)
+      user.save();
+
       res.send(user.regimen)
 
     })

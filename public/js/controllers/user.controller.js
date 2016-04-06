@@ -62,7 +62,6 @@
         vm.frequency  = 0;
         vm.generateEmptyArray();
         vm.regimenIndex = data;
-
         $state.go("user.mymeds")
       })
       .catch(function(err){
@@ -123,7 +122,13 @@
       $log.info("edit form submit", vm.editMed);
       editRegimenInputData(data);
       rs.editRegimen(data)
-
+      .then(function(data){
+        vm.regimenIndex = data;
+        $state.go("user.mymeds")
+      })
+      .catch(function(err){
+        $log.debug(err)
+      });
     }
 
 
