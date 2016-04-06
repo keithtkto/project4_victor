@@ -31,7 +31,7 @@
     <div class="col-q">
       <label>
         Quantity
-        <select tabindex="3" ng-model="vm.editMed.quantity">
+        <select tabindex="3" ng-model="vm.editMed.quantity" ng-required="true">
           <option ng-repeat="q in vm.quantity track by $index" value="{{q}}">{{q}}</option>
         </select>
       </label>

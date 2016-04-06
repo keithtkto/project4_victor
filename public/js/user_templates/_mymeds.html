@@ -3,7 +3,18 @@
 
   <h1>MY MEDICATIONS <button class="add-icon" ui-sref="user.newmeds"><img src="/assets/add_icon.png" alt="add icon">Add new meds</button></h1>
 
-  <div class="card-n-icon" ng-repeat="med in vm.regimenIndex track by $index" >
+  <div class="order-filter">
+    <input type="text" placeholder="Search" ng-model="searchtext">
+    <select ng-model="myMedFilter" name="" id="">
+      <option value="">Filter by</option>
+      <option value="+name">By name &#9650</option>
+      <option value="-name">By name &#9660</option>
+      <option value="+time.length">By frequency &#9650</option>
+      <option value="-time.length">By frequency &#9660</option>
+    </select>
+  </div>
+
+  <div class="card-n-icon" ng-repeat="med in vm.regimenIndex | orderBy:time.length:false | orderBy:myMedFilter | filter:searchtext track by $index" >
     <div class="card">
       <div class="col-75">
         <div class="col-1">
