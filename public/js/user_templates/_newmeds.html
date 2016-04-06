@@ -82,7 +82,7 @@
             <option ng-repeat="hr in vm.quantity track by $index" ng-if="$index < 12" value="{{hr}}" ng-required="true">{{hr}}</option>
           </select> <strong style="font-weight: bolder">:</strong>
           <select tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].min">
-            <option ng-repeat="min in [0,15,30,45]" value="{{min}}">{{min}}</option>
+            <option ng-repeat="min in [00,15,30,45]" value="{{min}}">{{min}}</option>
           </select>
           <select tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].apm" ng-required="true">
             <option value="">am</option>

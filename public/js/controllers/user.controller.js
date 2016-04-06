@@ -14,7 +14,7 @@
     vm.logout             = logout;
     vm.user               = token.decode();
     vm.submitnewRegimen   = submitnewRegimen;
-    vm.showRegimens       = showRegimens;
+    vm.showMeds       = showMeds;
     vm.generateEmptyArray = generateEmptyArray;
     vm.emptyArr           = 1;
     vm.generateEmptyArray()
@@ -62,8 +62,8 @@
       });
     }
 
-    function showRegimens() {
-      rs.showRegimens()
+    function showMeds() {
+      rs.showMeds()
       .then(function(data) {
         $log.info(data);
         vm.regimenIndex = data;

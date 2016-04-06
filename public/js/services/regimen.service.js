@@ -28,7 +28,7 @@
 
     var regimens = {
          newRegimen:   newRegimen,
-         showRegimens: showRegimens,
+         showMeds:     showMeds,
          doseUnits:    data.doseUnits,
          quantity:     data.quantity
        };
@@ -47,15 +47,46 @@
       })
     }
 
-    function showRegimens() {
+    function showMeds() {
       return $http({
           method: "get",
           url:    "api/me/regimens"
         })
       .then(function(res){
         $log.info(res.data)
-        return res.data
-      })
+        var showMedsArray = reformMedsArray(res.data)
+        return showMedsArray
+      });
+    }
+
+
+    function reformMedsArray(data) {
+      console.log("reformMed", data)
+      var newArr = [];
+      data.forEach(function(task, idx) {
+        $log.info(idx)
+        var hr   = task.hour > 12 ? task.hour - 12 : task.hour
+        var apm  = task.hour > 12 ? "pm": "am"
+        var timeObj = {hour: hr, minute: task.minute, apm: apm} //for creating new time object for
+                                                                //client side
+        task.time = [];
+        if (idx === 0) {        //add first item to array
+          task.time.push(timeObj)
+          newArr.unshift(task);
+        } else {                //if item is not the same med as previous, add to new array
+          if (task.name !== newArr[0].name ||
+              task.dosage !== newArr[0].dosage ||
+              task.direction !== newArr[0].direction ) {
+            $log.info(task)
+            task.time.push(timeObj)
+            newArr.unshift(task);
+          } else {
+            $log.info("else")
+            newArr[0].time.push(timeObj) //only add new time to timeObj
+          }
+        }
+      });
+      return newArr
     }
 
 

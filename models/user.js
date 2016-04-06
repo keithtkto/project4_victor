@@ -11,7 +11,7 @@ var regimenSchema = new mongoose.Schema({
   description:    String,
   reminder:       {type: Boolean, default: true},
   hour:           Number,
-  minute:         {type: Number, default: 0}
+  minute:         {type: Number, default: 00}
 });
 
 var userSchema = new mongoose.Schema({

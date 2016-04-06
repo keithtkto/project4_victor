@@ -101,7 +101,8 @@ h1 {
   background: #fff;
   border: 1px solid #e4e4e4;
   border-radius: 15px;
-  font-size: 0; }
+  font-size: 0;
+  width: 93%; }
   .card div {
     display: inline-block;
     padding: 10px 15px 10px 10px; }
@@ -139,3 +140,34 @@ h1 {
   .col-submit button {
     width: 30%;
     margin: 0 auto; } }
+
+.card-side-icon {
+  display: inline;
+  margin-left: -30px;
+  margin-top: 4px;
+  z-index: -5; }
+  .card-side-icon div {
+    padding: 10px 10px 10px 30px;
+    margin-top: 8px;
+    background-color: white;
+    border-radius: 15px;
+    -moz-box-shadow: 0.5px 0 0.5px 0.5px #555;
+    -webkit-box-shadow: 0.5px 0 0.5px 0.5px #555;
+    box-shadow: 0.5px 0 0.5px 0.5px #555; }
+    .card-side-icon div img {
+      max-width: 30px;
+      max-height: 30px; }
+
+.card-n-icon {
+  display: flex; }
+
+.add-icon {
+  margin-top: -10x;
+  max-height: 50px;
+  background: white;
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 10px; }
+  .add-icon img {
+    max-width: 25px;
+    max-height: 25px; }

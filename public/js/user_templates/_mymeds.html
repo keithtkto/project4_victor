@@ -1,45 +1,52 @@
 
 <div id="wrapper">
 
-  <h1>MY MEDICATIONS</h1>
+  <h1>MY MEDICATIONS <button class="add-icon" ui-sref="user.newmeds"><img src="/assets/add_icon.png" alt="add icon">Add new meds</button></h1>
 
-  <div class="card" ng-repeat="med in vm.regimenIndex" >
-    <div class="col-75">
-      <div class="col-1">
-          <h2>
-            {{med.name}}
-          </h2>
-          <span>
-            {{med.dosage}}, {{med.quantity}} times
-          </span>
+  <div class="card-n-icon" ng-repeat="med in vm.regimenIndex track by $index" >
+    <div class="card">
+      <div class="col-75">
+        <div class="col-1">
+            <h2>
+              {{med.name}}
+            </h2>
+            <span>
+              {{med.dosage}}, {{med.quantity}} times
+            </span>
+        </div>
+
+
+        <div class="col-1">
+          <small><em>Instruction:</em></small>
+          <h3>{{med.direction}}</h3>
+        </div>
+
+
+        <div class="col-1">
+          <small><em>Description:</em></small>
+          <h3>{{med.description}}</h3>
+        </div>
+
       </div>
-
-
-      <div class="col-1">
-        <small><em>Instruction:</em></small>
-        <h3>{{med.direction}}</h3>
+      <div class="col-4">
+        <div>
+          <small><em>Time:</em></small>
+          <h3>{{med.hour}}</h3>
+        </div>
       </div>
-
-
-      <div class="col-1">
-        <small><em>Description:</em></small>
-        <h3>{{med.description}}</h3>
-      </div>
-
     </div>
-    <div class="col-4">
+
+    <div class="card-side-icon">
       <div>
-        <small><em>Time:</em></small>
-        <h3>{{med.hour}}</h3>
+        <img src="/assets/edit_icon.png" alt="edit icon">
+      </div>
+      <div>
+        <img src="/assets/trash_icon.png" alt="trash icon">
       </div>
     </div>
-
-
-
   </div>
 </div>
 
-<button ui-sref="user.newmeds">Add new meds</button>
 
 
 
