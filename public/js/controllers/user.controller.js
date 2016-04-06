@@ -81,6 +81,10 @@
 
         vm.emptyArr.forEach(function(el, idx) {
 
+          vm.newRegimen.dosage = `${vm.newRegimen.dose} ${vm.newRegimen.units}`
+          console.log(vm.newRegimen.dosage)
+
+
           var input = angular.copy(vm.newRegimen);
           $log.debug("what is input",input)
 
