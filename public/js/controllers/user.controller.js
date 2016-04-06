@@ -60,7 +60,7 @@
         vm.frequency  = 0;
         vm.generateEmptyArray();
 
-        $state.go("user.myregimen")
+        $state.go("user.mymeds")
       })
       .catch(function(err){
         $log.debug(err)
