@@ -112,16 +112,23 @@ h1 {
       vertical-align: top;
       font-size: 13px;
       font-weight: bold;
-      color: #2A2A2A;
-      cursor: pointer; }
+      color: #2A2A2A; }
       .card div div span {
         margin-left: 3%; }
     .card div div * {
       display: inline; }
     .card div div small {
       display: block; }
-  .card div.col-4 {
-    position: absolute; }
+  .card div.col-q {
+    width: initial !important;
+    display: inline-block;
+    position: absolute;
+    overflow: scroll;
+    height: 120px;
+    width: 200px; }
+    .card div.col-q div div {
+      margin: 0px;
+      padding: 1px; }
 
 /** responsive design **/
 @media (min-width: 850px) {
@@ -136,7 +143,7 @@ h1 {
   .col-q {
     width: 16.6666666667%; }
   .col-75 {
-    width: 75%; }
+    width: 83%; }
   .col-submit button {
     width: 30%;
     margin: 0 auto; } }
@@ -144,19 +151,21 @@ h1 {
 .card-side-icon {
   display: inline;
   margin-left: -30px;
-  margin-top: 4px;
-  z-index: -5; }
-  .card-side-icon div {
-    padding: 10px 10px 10px 30px;
+  margin-top: 4px; }
+  .card-side-icon button {
+    cursor: pointer;
+    cursor: hand;
+    padding: 10px 10px 8px 10px;
+    margin-left: 30px;
     margin-top: 8px;
     background-color: white;
-    border-radius: 15px;
-    -moz-box-shadow: 0.5px 0 0.5px 0.5px #555;
-    -webkit-box-shadow: 0.5px 0 0.5px 0.5px #555;
-    box-shadow: 0.5px 0 0.5px 0.5px #555; }
-    .card-side-icon div img {
+    border-radius: 15px; }
+    .card-side-icon button img {
+      z-index: 99;
       max-width: 30px;
-      max-height: 30px; }
+      max-height: 30px;
+      cursor: pointer;
+      cursor: hand; }
 
 .card-n-icon {
   display: flex; }

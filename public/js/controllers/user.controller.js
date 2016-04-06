@@ -55,7 +55,7 @@
       $log.info('click', data);
       rs.newRegimen(data)
       .then(function(){
-        // $state.go("user.myregimen")
+        $state.go("user.myregimen")
       })
       .catch(function(err){
         $log.debug(err)
@@ -71,9 +71,11 @@
       });
     }
 
+    // function
 
 
-    //data packaging function
+
+    //helper & data packaging function
 
     //generating an array of new regimen if there are multiple reminder time slot
     function generateNewRegimenInputData(data) {

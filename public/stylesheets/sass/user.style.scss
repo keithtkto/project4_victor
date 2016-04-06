@@ -159,7 +159,7 @@ h1 {
       font-size: 13px;
       font-weight: bold;
       color: #2A2A2A;
-      cursor: pointer;
+      // cursor: pointer;
 
       span {
         margin-left: 3%;
@@ -177,22 +177,34 @@ h1 {
 
   }
 
-  div.col-4 {
+  div.col-q {
+    width: initial !important;
+    display: inline-block;
     position: absolute;
+    overflow: scroll;
+    height: 120px;
+    width: 200px;
+    div {
+      div {
+      margin: 0px;
+      padding: 1px;
+      }
+    }
   }
 }
+
 
 
 /** responsive design **/
 @media(min-width: 850px){
 
   // .col-1, .col-2, .col-3, .col-4, .col-q { box-shadow: 1px 1px #e4e4e4; border: none; }
-  .col-1 { width: 100% }
-  .col-2 { width: 50% }
-  .col-3 { width: 33.3333333333% }
-  .col-4 { width: 25% }
-  .col-q { width: 16.6666666667% }
-  .col-75{width: 75%}
+  .col-1  { width: 100% }
+  .col-2  { width: 50% }
+  .col-3  { width: 33.3333333333% }
+  .col-4  { width: 25% }
+  .col-q  { width: 16.6666666667% }
+  .col-75 {width: 83%}
 
 
   .col-submit button { width: 30%; margin: 0 auto; }
@@ -203,19 +215,22 @@ h1 {
   display: inline;
   margin-left: -30px;
   margin-top: 4px;
-  z-index: -5;
 
-  div {
-    padding: 10px 10px 10px 30px;
+  button {
+    cursor: pointer;
+    cursor: hand;
+    padding: 10px 10px 8px 10px;
+    margin-left: 30px;
     margin-top: 8px;
     background-color: white;
     border-radius: 15px;
-    -moz-box-shadow:    0.5px 0 0.5px 0.5px #555;
-    -webkit-box-shadow: 0.5px 0 0.5px 0.5px #555;
-    box-shadow:         0.5px 0 0.5px 0.5px #555;
+
     img {
+      z-index: 99;
       max-width: 30px;
       max-height: 30px;
+      cursor: pointer;
+      cursor: hand;
     }
   }
 }
@@ -232,10 +247,10 @@ h1 {
   border-radius: 20px;
   padding: 10px;
 
-
   img {
     max-width: 25px;
     max-height: 25px;
+
   }
 }
 

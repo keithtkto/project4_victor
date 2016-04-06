@@ -35,7 +35,7 @@
 
     return regimens;
 
-
+//all the http calls from the regimen
     function newRegimen(data){
       return $http({
           method: "post",
@@ -59,12 +59,22 @@
       });
     }
 
+    function deleteMed() {
+      return $http({
+        method: "delete",
+        url:    "api/me/regimens"
+      }).then(function(res){
+        return res
+      })
+    }
+
+//helper function
+
 
     function reformMedsArray(data) {
       console.log("reformMed", data)
       var newArr = [];
       data.forEach(function(task, idx) {
-        $log.info(idx)
         var hr   = task.hour > 12 ? task.hour - 12 : task.hour
         var apm  = task.hour > 12 ? "pm": "am"
         var timeObj = {hour: hr, minute: task.minute, apm: apm} //for creating new time object for
@@ -77,11 +87,9 @@
           if (task.name !== newArr[0].name ||
               task.dosage !== newArr[0].dosage ||
               task.direction !== newArr[0].direction ) {
-            $log.info(task)
             task.time.push(timeObj)
             newArr.unshift(task);
           } else {
-            $log.info("else")
             newArr[0].time.push(timeObj) //only add new time to timeObj
           }
         }
