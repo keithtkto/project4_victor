@@ -14,10 +14,14 @@
 @keyframes appear {
   from {
     opacity: 0;
+    height: 0;
+
   }
   to {
     opacity: 1;
+    height: 135px;
   }
+
 }
 @keyframes disappear {
   from {
@@ -29,7 +33,7 @@
 }
 @keyframes shrink {
   from {
-    height: 111px;
+    height: 135px;
   }
   to {
     height: 0;
@@ -40,18 +44,18 @@
     height: 0;
   }
   to {
-    height: 111px;
+    height: 135px;
   }
 }
 .card-n-icon.ng-enter {
-  animation: 0.8s appear;
+  animation: 0.5s appear;
 }
 .card-n-icon.ng-leave {
-  animation: 0.8s disappear;
+  animation: 0.5s disappear;
 }
 .card-n-icon.ng-move {
-  animation: 0.8s shrink;
+  animation: 0.5s shrink;
 }
 .card-n-icon.ng-move-active {
-  animation: 0.8s grow;
+  animation: 0.5s grow;
 }

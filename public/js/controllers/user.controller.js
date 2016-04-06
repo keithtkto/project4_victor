@@ -58,6 +58,7 @@
       .then(function(){
         vm.newRegimen = {};
         vm.frequency  = 0;
+        vm.generateEmptyArray();
 
         $state.go("user.myregimen")
       })

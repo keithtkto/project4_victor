@@ -13,6 +13,14 @@
             <span>
               {{med.dosage ? "N/A" : med.dosage}}, {{ med.quantity ? "N/A": med.quantity}} times
             </span>
+            <span>Reminder?</span>
+
+
+            <input ng-show="med.reminder" tabindex="7"  checked="true" type="checkbox" onclick="return false">
+            <input ng-hide="med.reminder" tabindex="7"  type="checkbox" onclick="return false">
+
+
+
         </div>
 
 
