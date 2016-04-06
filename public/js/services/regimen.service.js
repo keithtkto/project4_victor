@@ -66,7 +66,9 @@
         url:    "api/me/regimens",
         data:   data
       }).then(function(res){
-        return res
+        $log.info("delete return data",res.data)
+        var showMedsArray = reformMedsArray(res.data)
+        return showMedsArray
       })
     }
 
@@ -88,9 +90,7 @@
           task.idArray.push(task._id);
           newArr.unshift(task);
         } else {                //if item is not the same med as previous, add to new array
-          if ( task.name !== newArr[0].name ||
-               task.dosage !== newArr[0].dosage ||
-               task.direction !== newArr[0].direction ) {
+          if ( task.idCode !== newArr[0].idCode ) {
             task.idArray.push(task._id);
             task.time.push(timeObj)
             newArr.unshift(task);

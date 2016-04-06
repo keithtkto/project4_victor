@@ -3,7 +3,7 @@
   "use strict"
 
   angular
-    .module("victor", ["ui.router", "ngResource"]);
+    .module("victor", ["ui.router", "ngResource", "ngAnimate"]);
 
 
 })();

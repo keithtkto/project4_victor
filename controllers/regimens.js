@@ -20,12 +20,9 @@ function index(req, res, next) {
 function create(req, res, next) {
   User.findById(req.decoded._id).exec()
   .then(function(user){
-    console.log('create user', user)
     var code = generateUniqueRegimenCode(user);
-    console.log(code)
     req.body.forEach(function(newTask){
       console.log("foreach", newTask)
-      // newTask.idCode = "";
       newTask.idCode = code;
       user.regimen.push(newTask);
     });
@@ -39,8 +36,14 @@ function destroy(req, res, next) {
   User.findById(req.decoded._id).exec()
     .then(function(user){
 
-      user.regimen.indexOf
+      var updatedRegimen = user.regimen.filter(function(task){
+        return task.idCode !== req.body.idCode
+      })
+
+      user.regimen = updatedRegimen;
+      user.save()
       console.log('user d',user)
+      res.send(user.regimen)
 
     })
 }
@@ -63,7 +66,6 @@ function generateCode() {
 //compare new classCode with existing classCode
 function generateUniqueRegimenCode(user) {
   var nextCode;
-
   var matchingCodes = [];
   do {
     nextCode = generateCode();
@@ -71,8 +73,6 @@ function generateUniqueRegimenCode(user) {
       return existingCode.idCode === nextCode;
     });
   } while (matchingCodes.length > 0);
-
   return nextCode;
-
 }
 

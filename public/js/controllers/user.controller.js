@@ -56,6 +56,9 @@
       $log.info('click', data);
       rs.newRegimen(data)
       .then(function(){
+        vm.newRegimen = {};
+        vm.frequency  = 0;
+
         $state.go("user.myregimen")
       })
       .catch(function(err){
@@ -73,9 +76,12 @@
     }
 
     function delMed(data){
-
       $log.info("del clicked", data)
       rs.deleteMed(data)
+      .then(function(data){
+        vm.regimenIndex = data;
+        $log.info(vm.regimenIndex);
+      })
 
     }
 
@@ -86,7 +92,6 @@
     //generating an array of new regimen if there are multiple reminder time slot
     function generateNewRegimenInputData(data) {
       if (vm.emptyArr.length != 0) {
-
         vm.emptyArr.forEach(function(el, idx) {
 
           vm.newRegimen.dosage = `${vm.newRegimen.dose} ${vm.newRegimen.units}`
