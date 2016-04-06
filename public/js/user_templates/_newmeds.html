@@ -19,8 +19,9 @@
       <label>
         Dosage
         <div>
-        <input placeholder="500" id="company" name="company" tabindex="2" ng-model="vm.newRegimen.dose">
-        <select tabindex="2" ng-model="vm.newRegimen.units">
+        <input placeholder="Ex. 500" id="company" name="company" tabindex="2" ng-model="vm.newRegimen.dose" ng-required="true">
+        <select tabindex="2" ng-model="vm.newRegimen.units" ng-required="true">
+          <option value="">Ex. unit</option>
           <option ng-repeat="unit in vm.doseUnits track by $index" value="{{unit}}">{{unit}}</option>
         </select>
         </div>

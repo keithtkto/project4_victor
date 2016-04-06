@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 
 
 var regimenSchema = new mongoose.Schema({
-  created_at:     {type: Date, default: Date.now},
+  createdAt:     {type: Date, default: Date.now},
   name:           {type: String, required: true},
   dosage:         String,
   quantity:       Number,
@@ -11,11 +11,12 @@ var regimenSchema = new mongoose.Schema({
   description:    String,
   reminder:       {type: Boolean, default: true},
   hour:           Number,
-  minute:         {type: Number, default: 00}
+  minute:         {type: Number, default: 00},
+  // idCode:         String
 });
 
 var userSchema = new mongoose.Schema({
-  created_at:     {type: Date, default: Date.now},
+  createdAt:     {type: Date, default: Date.now},
   email:          { type: String, required: true, unique: true },
   firstName:      { type: String, required: true },
   lastName:       { type: String, required: true },

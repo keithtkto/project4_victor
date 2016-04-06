@@ -17,7 +17,8 @@
     vm.showMeds       = showMeds;
     vm.generateEmptyArray = generateEmptyArray;
     vm.emptyArr           = 1;
-    vm.generateEmptyArray()
+    vm.delMed             = delMed;
+    vm.generateEmptyArray();
 
 
     vm.doseUnits          = rs.doseUnits;
@@ -71,7 +72,12 @@
       });
     }
 
-    // function
+    function delMed(data){
+
+      $log.info("del clicked", data)
+      rs.deleteMed(data)
+
+    }
 
 
 

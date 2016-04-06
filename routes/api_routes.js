@@ -16,6 +16,8 @@ router.put( '/users/me', token.authenticate, usersCtrl.update);
 // user regimen paths
 router.get( '/me/regimens', token.authenticate, regimensCtrl.index)
 router.post( '/me/regimens', token.authenticate, regimensCtrl.create)
+router.delete( '/me/regimens', token.authenticate, regimensCtrl.destroy)
+
 
 
 // token paths
