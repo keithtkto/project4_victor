@@ -15,7 +15,7 @@
                       "mg", "drops", "pieces", "puffs",
                       "units", "teaspoon", "tablespoon",
                       "patch", "mcg", "iu", "meq", "carton",
-                      "spray", "reps", "times"
+                      "spray"
                     ];
 
     data.quantity = [ 1, 2, 3, 4, 5,

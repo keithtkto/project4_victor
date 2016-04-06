@@ -1,3 +1,6 @@
+h1 {
+  margin-left: 10px; }
+
 .user-left-nav {
   float: left;
   position: fixed;
@@ -7,15 +10,18 @@
   overflow: hidden;
   color: #F4F4F4;
   font-size: 20px;
-  text-align: center;
-  font-weight: bolder; }
+  text-align: left;
+  font-weight: bolder;
+  -moz-box-shadow: 1px 0 2px 2px #555;
+  -webkit-box-shadow: 1px 0 2px 2px #555;
+  box-shadow: 1px 0 2px 2px #555; }
   .user-left-nav img {
     width: 220px;
     height: 73;
     margin-bottom: -35px; }
   .user-left-nav li {
-    margin: 0 -10px 0 -15px;
-    padding: 15px 0 15px 0; }
+    margin: 0 0px 0 0px;
+    padding: 15px 10px 15px 10px; }
   .user-left-nav li:hover {
     background-color: #2c6ba2;
     cursor: pointer;
@@ -31,13 +37,13 @@
 .user-main {
   background-color: #F4F4F4;
   z-index: -10;
-  margin-left: 220px;
+  margin-left: 200px;
   padding-left: 40px;
   position: fixed;
   height: 100%;
-  width: -webkit-calc(100% - 225px);
-  width: -moz-calc(100% - 225px);
-  width: calc(100% - 225px);
+  width: -webkit-calc(100% - 200px);
+  width: -moz-calc(100% - 200px);
+  width: calc(100% - 200px);
   overflow: scroll; }
 
 .add-new-meds-form {
@@ -79,3 +85,57 @@
       min-width: 300px; }
     .add-new-meds-form .login-submit {
       text-align: left; } }
+
+h1 {
+  display: block;
+  font-size: 3.1em;
+  line-height: 1.45em;
+  text-align: left;
+  color: #2A2A2A;
+  text-shadow: 1px 1px 0 #fff; }
+
+.card {
+  display: block;
+  margin: 1px 10px 0 10px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 15px;
+  font-size: 0; }
+  .card div {
+    display: inline-block;
+    padding: 10px 15px 10px 10px; }
+    .card div div {
+      display: inline-block;
+      padding: 5px 15px 5px 10px;
+      vertical-align: top;
+      font-size: 13px;
+      font-weight: bold;
+      color: #2A2A2A;
+      cursor: pointer; }
+      .card div div span {
+        margin-left: 3%; }
+    .card div div * {
+      display: inline; }
+    .card div div small {
+      display: block; }
+  .card div.col-4 {
+    position: absolute; }
+
+/** responsive design **/
+@media (min-width: 850px) {
+  .col-1 {
+    width: 100%; }
+  .col-2 {
+    width: 50%; }
+  .col-3 {
+    width: 33.3333333333%; }
+  .col-4 {
+    width: 25%; }
+  .col-q {
+    width: 16.6666666667%; }
+  .col-75 {
+    width: 75%; }
+  .col-submit button {
+    width: 30%;
+    margin: 0 auto; } }

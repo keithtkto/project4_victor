@@ -12,8 +12,7 @@ h1 {
   display: block;
   font-size: 3.1em;
   line-height: 1.45em;
-  text-align: center;
-  font-weight: bold;
+  text-align: left;
   color: #2A2A2A;
   text-shadow: 1px 1px 0 #fff;
 }
