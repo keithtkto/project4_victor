@@ -11,28 +11,24 @@
               {{med.name}}
             </h2>
             <span>
-              {{med.dosage ? "N/A" : med.dosage}}, {{ med.quantity ? "N/A": med.quantity}} times
+              {{med.dosage ? med.dosage: "N/A"}}, {{ med.quantity ? med.quantity: "N/A"}} times
             </span>
+
             <span>Reminder?</span>
-
-
             <input ng-show="med.reminder" tabindex="7"  checked="true" type="checkbox" onclick="return false">
             <input ng-hide="med.reminder" tabindex="7"  type="checkbox" onclick="return false">
-
-
-
         </div>
 
 
         <div class="col-1">
           <small><em>Instruction:</em></small>
-          <h3>{{med.direction ? "N/A" : med.direction}}</h3>
+          <h3>{{med.direction ? med.direction : "N/A" }}</h3>
         </div>
 
 
         <div class="col-1">
           <small><em>Description:</em></small>
-          <h3>{{med.description ? "N/A" : med.description }} </h3>
+          <h3>{{med.description ? med.description : "N/A" }} </h3>
         </div>
 
       </div>
@@ -48,7 +44,7 @@
 
     <div class="card-side-icon">
       <button>
-        <img src="/assets/edit_icon.png" alt="edit icon" ng-click="">
+        <img src="/assets/edit_icon.png" alt="edit icon" ng-click="vm.editMedForm(med)">
       </button>
       <button>
         <img src="/assets/trash_icon.png" alt="trash icon" ng-click="vm.delMed(med)">

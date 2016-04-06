@@ -64,6 +64,10 @@
           url:          "/newmeds",
           templateUrl:  "/js/user_templates/_newmeds.html"
         })
+        .state("user.editmed", {
+          url:          "/editmedication",
+          templateUrl:  "/js/user_templates/_editmed.html"
+        })
         .state("user.myreport", {
           url:          "/myreport",
           templateUrl:  "/js/user_templates/_myreport.html"
@@ -84,6 +88,7 @@
           url:          "/contactus",
           templateUrl:  "/js/user_templates/_contactus.html"
         })
+
 
     $urlRouterProvider.otherwise("/");
 

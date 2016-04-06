@@ -18,6 +18,8 @@
     vm.generateEmptyArray = generateEmptyArray;
     vm.emptyArr           = 1;
     vm.delMed             = delMed;
+    vm.editMedForm        = editMedForm;
+    vm.submitEditMed      = submitEditMed;
     vm.generateEmptyArray();
 
 
@@ -55,10 +57,11 @@
       generateNewRegimenInputData(data)
       $log.info('click', data);
       rs.newRegimen(data)
-      .then(function(){
+      .then(function(data){
         vm.newRegimen = {};
         vm.frequency  = 0;
         vm.generateEmptyArray();
+        vm.regimenIndex = data;
 
         $state.go("user.mymeds")
       })
@@ -82,10 +85,46 @@
       .then(function(data){
         vm.regimenIndex = data;
         $log.info(vm.regimenIndex);
-      })
-
+      });
     }
 
+    function editMedForm(med) {
+
+      $log.info("edit med", med)
+
+      vm.frequency = med.time.length.toString()
+      vm.generateEmptyArray();
+
+      med.time.forEach(function(slot, idx){
+
+        vm.emptyArr[idx] = {
+          hr: "",
+          min: "",
+          apm: ""
+        }
+        vm.emptyArr[idx].hr     = slot.hour.toString()
+        vm.emptyArr[idx].min    = slot.minute.toString()
+        vm.emptyArr[idx].apm    = slot.apm.toString()
+
+      });
+
+      med.timeArray = vm.emptyArr
+      var dosage = med.dosage.split(" ")
+      med.dose  = dosage[0];
+      med.units = dosage[1];
+
+      vm.editMed = med;
+      $state.go("user.editmed")
+    }
+
+
+    function submitEditMed(){
+      var data = [];
+      $log.info("edit form submit", vm.editMed);
+      editRegimenInputData(data);
+      rs.editRegimen(data)
+
+    }
 
 
     //helper & data packaging function
@@ -97,13 +136,31 @@
 
           vm.newRegimen.dosage = `${vm.newRegimen.dose} ${vm.newRegimen.units}`
           console.log(vm.newRegimen.dosage)
-
-
           var input = angular.copy(vm.newRegimen);
-          $log.debug("what is input",input)
 
+          $log.debug("what is input",input)
           var apm = vm.emptyArr[idx].apm === "am" ? 0 : 12;
 
+          input.hour   = parseInt(vm.emptyArr[idx].hr) + apm
+          input.hour === 24 ? input.hour = 0 : "";
+          input.minute = vm.emptyArr[idx].min
+
+          data.push(input);
+        });
+      }
+    }
+
+
+    function editRegimenInputData(data) {
+      if (vm.emptyArr.length != 0) {
+        vm.emptyArr.forEach(function(el, idx) {
+
+          vm.editMed.dosage = `${vm.editMed.dose} ${vm.editMed.units}`
+          console.log(vm.editMed.dosage)
+          var input = angular.copy(vm.editMed);
+
+          $log.debug("what is input",input)
+          var apm = vm.emptyArr[idx].apm === "am" ? 0 : 12;
 
           input.hour   = parseInt(vm.emptyArr[idx].hr) + apm
           input.hour === 24 ? input.hour = 0 : "";

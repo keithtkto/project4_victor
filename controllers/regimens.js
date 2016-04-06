@@ -4,7 +4,8 @@ var User = require("../models/user");
 module.exports = {
   index: index,
   create:create,
-  destroy: destroy
+  destroy: destroy,
+  update: update
 };
 
 
@@ -47,6 +48,26 @@ function destroy(req, res, next) {
 
     })
 }
+
+function update(req, res, next) {
+  console.log("update req", req.body)
+  User.findById(req.decoded._id).exec()
+    .then(function(user){
+
+      var updatedRegimen = user.regimen.filter(function(task){
+        return task.idCode !== req.body[0].idCode
+      })
+
+      updatedRegimen.push(req.body)
+
+      user.regimen = updatedRegimen;
+      user.save()
+      console.log('user edit',user)
+      res.send(user.regimen)
+
+    })
+}
+
 
 
 

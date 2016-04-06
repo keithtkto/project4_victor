@@ -30,6 +30,7 @@
          newRegimen:   newRegimen,
          showMeds:     showMeds,
          deleteMed:    deleteMed,
+         editRegimen:  editRegimen,
          doseUnits:    data.doseUnits,
          quantity:     data.quantity
        };
@@ -45,6 +46,8 @@
         })
       .then(function(res){
         $log.info(res.data)
+        return reformMedsArray(res.data)
+
       })
     }
 
@@ -55,8 +58,7 @@
         })
       .then(function(res){
         $log.info(res.data)
-        var showMedsArray = reformMedsArray(res.data)
-        return showMedsArray
+        return reformMedsArray(res.data)
       });
     }
 
@@ -67,9 +69,19 @@
         data:   data
       }).then(function(res){
         $log.info("delete return data",res.data)
-        var showMedsArray = reformMedsArray(res.data)
-        return showMedsArray
+        return reformMedsArray(res.data)
       })
+    }
+
+    function editRegimen(data){
+      return $http({
+        method: "put",
+        url:    "api/me/regimens",
+        data:   data
+      }).then(function(res){
+        $log.info("edit return data", res.data)
+        return reformMedsArray(res.data)
+      });
     }
 
 //helper function
@@ -79,6 +91,7 @@
       console.log("reformMed", data)
       var newArr = [];
       data.forEach(function(task, idx) {
+
         var hr   = task.hour > 12 ? task.hour - 12 : task.hour
         var apm  = task.hour > 12 ? "pm": "am"
         var timeObj = {hour: hr, minute: task.minute, apm: apm} //for creating new time object for
