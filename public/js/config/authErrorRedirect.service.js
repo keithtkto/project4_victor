@@ -23,7 +23,8 @@
       // bad authorization) error, redirect to the sign in page.
       if (err.status === 401 || err.status === 403) {
         $log.debug(`${status} response received! Redirecting user to signin.`);
-        $state.go('signin');
+        console.log($state)
+        $state.go("splash.signup");
       }
 
       // Now that we've done our due diligence, pass the error through
