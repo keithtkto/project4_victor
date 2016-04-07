@@ -161,8 +161,8 @@
           var apm = vm.emptyArr[idx].apm === "am" ? 0 : 12;
 
           input.hour   = parseInt(vm.emptyArr[idx].hr) + apm
-          input.hour === 12 ? input.hour = 0 : "";
-          input.hour === 24 ? input.hour = 12 : "";
+          input.hour === 12 ? input.hour = 0 : "";  // if value is 12, means 12am , midnight
+          input.hour === 24 ? input.hour = 12 : ""; // if value is 24, means 12pm , noon
           input.minute = vm.emptyArr[idx].min
 
           data.push(input);

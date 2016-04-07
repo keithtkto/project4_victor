@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+var CronJob = require('cron').CronJob;
+
+var cj = new CronJob('*/10 * * * * *', function() {
+  console.log("-> starting cron_send_reminders…");
+
+  console.log("-> closing cron_send_reminders.");
+}, null, true, 'America/Los_Angeles');

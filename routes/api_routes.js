@@ -4,7 +4,6 @@ var express = require('express'),
 // Require controllers.
 var usersCtrl = require('../controllers/users');
 var regimensCtrl = require('../controllers/regimens');
-var cronCtrl = require('../controllers/cron');
 
 
 // Require token authentication.
