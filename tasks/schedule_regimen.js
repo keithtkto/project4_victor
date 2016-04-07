@@ -1,5 +1,7 @@
 var debug = require('debug')('task:schedule_regimen');
 
+require('../config/database');
+
 var User = require("../models/user");
 
 module.exports = {

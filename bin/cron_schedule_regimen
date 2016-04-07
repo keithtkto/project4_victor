@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-var debug = require('debug')('task');
+var debug = require('debug')('task:*');
 
 var CronJob = require('cron').CronJob;
-// var Task    = require('../tasks/schedule_regimen');
-var User = require("../models/user");
+var Task    = require('../tasks/schedule_regimen');
 
 var args = process.argv.slice(2),
     pattern;
@@ -18,15 +17,11 @@ if (args[0] === 'test') {
 var cj = new CronJob(pattern, function() {
   debug("-> starting cron_schedule_regimen…");
 
-  // Task.run().then(function() {
-  //   debug("-> closing cron_schedule_regimen.");
-  // }).catch(function(err) { debug(err) });
-  User
-    .find({}).exec()
-    .then(function(users) {
-      debug("Users>", users);
-    })
-    .catch(function(err) { debug("Err>", err) })
-    .then(function() { debug("-> closing cron_schedule_regimen.") });
+  Task
+    .run()
+    .catch()
+    .then(function() {
+      debug("-> closing cron_schedule_regimen.");
+    });
 
 }, null, true, 'America/Los_Angeles');
