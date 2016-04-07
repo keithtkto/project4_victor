@@ -22,7 +22,7 @@
               {{med.name}}
             </h2>
             <span>
-              {{med.dosage ? med.dosage: "N/A"}}, {{ med.quantity ? med.quantity: "N/A"}} times
+              take <strong> {{med.dosage ? med.dosage: "N/A"}}, {{ med.quantity ? med.quantity: "N/A"}} times</strong>
             </span>
 
             <span>Reminder?</span>
@@ -45,7 +45,7 @@
       </div>
       <div class="col-q">
         <div>
-          <small><em>Time:</em></small>
+          <small><em>Take this at</em></small>
           <div ng-repeat="time in med.time | orderBy:'hour' | orderBy:'apm'" style="display: block; overflow: scroll;">
             <h3>{{time.hour == 0 ? "00" : "0" + time.hour}}: {{time.minute == 0 ? "00" : time.minute || ""}} {{time.apm || ""}}</h3>
           </div>

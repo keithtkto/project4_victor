@@ -4,10 +4,11 @@
   angular
     .module("victor")
     .factory("regimenService", regimenService)
+    .con
 
-  regimenService.$inject = ["$log", "$http"];
+  regimenService.$inject = ["$log", "$http","_"];
 
-  function regimenService($log, $http) {
+  function regimenService($log, $http, _) {
     var data = this;
 
 
@@ -31,6 +32,7 @@
          showMeds:     showMeds,
          deleteMed:    deleteMed,
          editRegimen:  editRegimen,
+         showRegimens:  showRegimens,
          doseUnits:    data.doseUnits,
          quantity:     data.quantity
        };
@@ -38,6 +40,48 @@
     return regimens;
 
 //all the http calls from the regimen
+    function showMeds() {
+      return $http({
+          method: "get",
+          url:    "api/me/regimens"
+        })
+      .then(function(res){
+        $log.info(res.data)
+        return reformMedsArray(res.data)
+      });
+    }
+
+    function showRegimens() {
+      return $http({
+          method: "get",
+          url:    "api/me/regimens"
+        })
+      .then(function(res){
+
+        var tasks = res.data
+        var sortedTasks  =  _.sortBy(tasks, ["hour", "minute"])
+
+        var reformatTasks = [];
+        sortedTasks.forEach(function(task,idx){
+
+          if (idx === 0) {
+            var innerTasksArray = [task];
+            reformatTasks.unshift(innerTasksArray);
+          } else {
+
+            if ( task.hour === sortedTasks[idx - 1].hour ) {
+              reformatTasks[0].push(task)
+            } else {
+              var innerTasksArray = [task];
+              reformatTasks.unshift(innerTasksArray);
+            };
+          };
+        });
+
+        return reformatTasks.reverse()
+      });
+    }
+
     function newRegimen(data){
       return $http({
           method: "post",
@@ -49,17 +93,6 @@
         return reformMedsArray(res.data)
 
       })
-    }
-
-    function showMeds() {
-      return $http({
-          method: "get",
-          url:    "api/me/regimens"
-        })
-      .then(function(res){
-        $log.info(res.data)
-        return reformMedsArray(res.data)
-      });
     }
 
     function deleteMed(data) {

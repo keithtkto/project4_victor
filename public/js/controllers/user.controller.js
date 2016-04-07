@@ -20,12 +20,15 @@
     vm.delMed             = delMed;
     vm.editMedForm        = editMedForm;
     vm.submitEditMed      = submitEditMed;
+    vm.showRegimens       = showRegimens;
     vm.generateEmptyArray();
 
 
     vm.doseUnits          = rs.doseUnits;
     vm.quantity           = rs.quantity;
 
+    var now = new Date()
+    vm.timeNow = now.getHours()
 
     vm.newRegimen = {name: "123", dosage: "123", description: "123", direction: "take it", reminder: true};
 
@@ -51,6 +54,26 @@
 
 
 
+
+    function showMeds() {
+      rs.showMeds()
+      .then(function(data) {
+        $log.info(data);
+        vm.regimenIndex = data;
+        $log.info(vm.regimenIndex);
+      });
+    }
+
+    function showRegimens(){
+      $log.info("showRegimen click")
+      rs.showRegimens()
+      .then(function(data){
+        vm.showRegimenData = data
+
+      })
+
+    }
+
     function submitnewRegimen() {
       var data = [];
 
@@ -66,15 +89,6 @@
       })
       .catch(function(err){
         $log.debug(err)
-      });
-    }
-
-    function showMeds() {
-      rs.showMeds()
-      .then(function(data) {
-        $log.info(data);
-        vm.regimenIndex = data;
-        $log.info(vm.regimenIndex);
       });
     }
 

@@ -1,1 +1,33 @@
-myregimen
+
+
+<h1>Upcoming regemin</h1>
+<div id="wrapper" ng-repeat="bigArr in vm.showRegimenData">
+
+  <div class="card-n-icon" >
+    <div class="card" >
+      <div class="col-1" ng-repeat="task in bigArr" ng-if="vm.timeNow < bigArr[0].hour">
+        <div class="col-1"  >
+           <h1 ng-if="$index === 0">At {{ task.hour > 12 ? task.hour - 12 : task.hour }}{{task.hour > 11 ? "pm" : "am"}} </h1><br>
+            <h2>
+              {{task.name}}
+            </h2>
+
+            <span>
+              take <strong> {{task.dosage ? task.dosage: "N/A"}}, {{ task.quantity ? task.quantity: "N/A"}} times </strong>
+            </span>
+
+            <span>Alarm Set?</span>
+            <input ng-show="task.reminder" tabindex="7"  checked="true" type="checkbox" onclick="return false">
+            <input ng-hide="task.reminder" tabindex="7"  type="checkbox" onclick="return false">
+            <br>
+            <small><em>Instruction:</em></small>
+            <h3>{{task.direction ? task.direction : "N/A" }}</h3>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+ </div>
+
