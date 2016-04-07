@@ -2,8 +2,31 @@ var mongoose = require('mongoose'),
     debug    = require('debug')('app:models');
 
 
+// var taskSchema = new mongoose.Schema({
+//   name:           {type: String, required: true},
+//   dosage:         String,
+//   quantity:       Number,
+//   time_scheduled: Date,
+//   time_taken:     Date,
+//   completed:      {type: Boolean, default: false},
+//   comment:        String
+// });
+
+var historySchema = new mongoose.Schema({
+  createdAt:      {type: Date, default: Date.now},
+  // task:           [taskSchema]
+  // name:           {type: String, required: true},
+  dosage:         String,
+  quantity:       Number,
+  time_scheduled: Date,
+  time_taken:     Date,
+  completed:      {type: Boolean, default: false},
+  comment:        String
+});
+
+
 var regimenSchema = new mongoose.Schema({
-  createdAt:     {type: Date, default: Date.now},
+  createdAt:      {type: Date, default: Date.now},
   name:           {type: String, required: true},
   dosage:         String,
   quantity:       Number,
@@ -23,7 +46,8 @@ var userSchema = new mongoose.Schema({
   cellNumber:     { type: String },
   dob:            { type: String },
   zipCode:        { type: String },
-  regimen:        [regimenSchema]
+  regimen:        [regimenSchema],
+  history:        [historySchema]
 });
 
 // Add bcrypt hashing to model (works on a password field)!
