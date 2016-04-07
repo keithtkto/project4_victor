@@ -1,27 +1,31 @@
 var User = require("../models/user");
-var regimensCtrl = require('./regimens');
-
-
-
 var CronJob = require('cron').CronJob;
-var cj = new CronJob('*/10 * * * * *', function() {
-  return regimensCtrl.test()
-  console.log("start cron")
 
-}, function(){
-  console.log("finish")
-}, true, 'America/Los_Angeles');
+
+module.exports = {
+
+  test: test
+};
+
+
+
+var cj = new CronJob('*/10 * * * * *', function() {
+  console.log("start cron")
+  test()
+}, null, true, 'America/Los_Angeles');
 
 cj.start()
 
+function test(req, res, next) {
+  console.log("XYXsdfsYXYXYXYXYYXYXYYXY")
+  User.find().exec()
+  .then(function(allUsers){
+      console.log(allUsers)
+    allUsers.forEach(function(user){
+      user.history.push({name: "USER FOR ALL", comment: "USER FOR ALLUSER FOR ALLUSER FOR ALLUSER FOR ALLUSER FOR ALL" })
+      console.log(user)
+      user.save()
 
-function addNewTask(){
-  console.log("add new task")
-  console.log(User)
-   User.findById("570534563bac3bd9c4bef933").exec()
-  .then(function(user){
-    console.log("user", user)
+    })
   });
-}
-
-
+};

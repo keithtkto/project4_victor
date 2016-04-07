@@ -6,6 +6,12 @@
 
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+  <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/lib/carousel/carousel.css">
+
+
+
   <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/animation.css">
@@ -13,7 +19,6 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.8.2/lodash.min.js"></script>
 
 
-  <!-- If you must use outside libs that aren't Angular-specific, include them BEFORE Angular. -->
   <script src="/js/vendor/jwt-decode.2.0.1.js"></script>
 
   <script src="/js/vendor/angularjs.1.5.3.js"></script>
@@ -21,6 +26,14 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.min.js"></script>
+
+<!-- for angular carousel -->
+  <script src="/lib/carousel/carousel.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-touch.js"></script>
+
+
+
+
 
 </head>
 <body>
@@ -30,7 +43,10 @@
 
   </div>
 </body>
+
+
   <script src="/js/app.module.js"></script>
+
 
   <script src="/js/config/app.debug.js"></script>
   <script src="/js/config/app.httpInterceptors.js"></script>
@@ -51,5 +67,7 @@
 
   <script src="/js/controllers/signup_in.controller.js"></script>
   <script src="/js/controllers/user.controller.js"></script>
+  <script src="/js/controllers/carousel.controller.js"></script>
+
 
 </html>

@@ -15,7 +15,7 @@ var mongoose = require('mongoose'),
 var historySchema = new mongoose.Schema({
   createdAt:      {type: Date, default: Date.now},
   // task:           [taskSchema]
-  // name:           {type: String, required: true},
+  drugName:           String,
   dosage:         String,
   quantity:       Number,
   time_scheduled: Date,
