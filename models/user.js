@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
-    debug    = require('debug')('app:models');
-
+    debug    = require('debug')('app:models'),
+    _        = require('lodash');
 
 // var taskSchema = new mongoose.Schema({
 //   name:           {type: String, required: true},
@@ -14,7 +14,7 @@ var mongoose = require('mongoose'),
 
 var historySchema = new mongoose.Schema({
   createdAt:      {type: Date, default: Date.now},
-  timeScheduled:  Date,
+  timeScheduled:  {type: Date, default: Date.now},
   timeTaken:      Date,
   comment:        String,
   missed:         {type: Boolean, default: false}
@@ -31,10 +31,14 @@ var regimenSchema = new mongoose.Schema({
   reminder:    {type: Boolean, default: true},
   history:        [historySchema],
   hour:           Number,
-  minute:         {type: Number, default: 00},
+  minute:         {type: Number, default: 0},
   idCode:         String
   //, active: Boolean default: true
 });
+
+regimenSchema.methods.isAt = function(time) {
+  return this.hour === time.hour && this.minute === time.minute;
+}
 
 var userSchema = new mongoose.Schema({
   createdAt:     {type: Date, default: Date.now},
@@ -46,6 +50,28 @@ var userSchema = new mongoose.Schema({
   zipCode:        { type: String },
   regimen:        [regimenSchema]
 });
+
+
+userSchema.statics.getUpcomingRegimens = function(upcomingTime) {
+  return this
+    .find({}).exec()
+    .then(function(users) {
+      // Get all of the regimens in the db.
+      //   - Get all users, then pull out just the regmin lists,
+      //   - take all the regimen lists and merge…
+      return _.flatten(_.map(users, 'regimen'))
+    })
+    .then(function(regimens) {
+      // Filter for reminders!
+      return _.filter(regimens, 'reminder');
+    })
+    .then(function(regimens) {
+      // Filter for upcoming time matching
+      return regimens.filter(function(regimen) {
+        return regimen.isAt(upcomingTime);
+      });
+    });
+}
 
 // Add bcrypt hashing to model (works on a password field)!
 userSchema.plugin(require('mongoose-bcrypt'));
