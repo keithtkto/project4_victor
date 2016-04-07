@@ -47,7 +47,7 @@
         <div>
           <small><em>Take this at</em></small>
           <div ng-repeat="time in med.time | orderBy:'hour' | orderBy:'apm'" style="display: block; overflow: scroll;">
-            <h3>{{time.hour == 0 ? "00" : "0" + time.hour}}: {{time.minute == 0 ? "00" : time.minute || ""}} {{time.apm || ""}}</h3>
+            <h3>{{time.hour == 0 ? "00" : time.hour}}: {{time.minute == 0 ? "00" : time.minute || ""}} {{time.apm || ""}}</h3>
           </div>
         </div>
       </div>

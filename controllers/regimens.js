@@ -8,25 +8,7 @@ module.exports = {
   create:create,
   destroy: destroy,
   update: update,
-  // test: test
 };
-
-// var cj = new CronJob('*/10 * * * * *', function() {
-//   console.log("start cron")
-//   test()
-// }, null, true, 'America/Los_Angeles');
-
-// cj.start()
-
-// function test(req, res, next) {
-//   console.log("XYXsdfsYXYXYXYXYYXYXYYXY")
-//   User.findById("570534563bac3bd9c4bef933").exec()
-//   .then(function(user){
-//     user.history.push({drugName: "TESTING CRON", comment: "TESTTESTTESTTESTTESTTESTTESTTEST in cron.js" })
-//     console.log(user)
-//     user.save()
-//   });
-// };
 
 
 

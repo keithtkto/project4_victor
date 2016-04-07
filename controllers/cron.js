@@ -20,12 +20,16 @@ function test(req, res, next) {
   console.log("XYXsdfsYXYXYXYXYYXYXYYXY")
   User.find().exec()
   .then(function(allUsers){
-      console.log(allUsers)
+      // console.log(allUsers)
     allUsers.forEach(function(user){
-      user.history.push({name: "USER FOR ALL", comment: "USER FOR ALLUSER FOR ALLUSER FOR ALLUSER FOR ALLUSER FOR ALL" })
-      console.log(user)
-      user.save()
+      user.regimen.forEach(function(task){
+        console.log(task)
 
+      })
+
+      // user.history.push({name: "USER FOR ALL", comment: "USER FOR ALLUSER FOR ALLUSER FOR ALLUSER FOR ALLUSER FOR ALL" })
+      console.log("cron job doing server stuff")
+      user.save()
     })
   });
 };
