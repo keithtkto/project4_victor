@@ -4,11 +4,12 @@ var mongoose = require('mongoose'),
 
 var historySchema = new mongoose.Schema({
   createdAt:      {type: Date, default: Date.now},
-  timeScheduled:  {type: Date, default: Date.now},
+  timeScheduled:  Date ,
   timeTaken:      Date,
   comment:        String,
   missed:         {type: Boolean, default: false},
-  alert:          Boolean
+  alert:          Boolean,
+  nameDosage:     String
 });
 
 

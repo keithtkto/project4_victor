@@ -11,7 +11,7 @@ var args = process.argv.slice(2),
 if (args[0] === 'test') {
   pattern = '*/5 * * * * *';
 } else {
-  pattern = '* */5 * * * *';
+  pattern = '0 */15 * * * *';
 }
 
 
