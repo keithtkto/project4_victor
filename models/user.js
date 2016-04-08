@@ -72,7 +72,6 @@ userSchema.statics.dataForSMS = function(){
       })
       //group history into by user._id to {user._id: [array of history]}
       var groupedHistory = _.groupBy(history, function(obj){
-        debug("each regimen", obj.parent().parent().firstName)
           return obj.parent().parent()._id
       });
       return groupedHistory

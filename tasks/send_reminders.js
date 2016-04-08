@@ -10,7 +10,9 @@ var User = require("../models/user");
 
 // Twilio Credentials
 var accountSid = "ACba9fab5169877615541990468f7fdfa7";
-// var authToken  = process.env.TWILIO_TOKEN;
+var authToken  = "e15825c04e4b2f58df5d8d0f4521c7d5"
+// var authToken = "";
+
 
 
 //require the Twilio module and create a REST client
@@ -36,13 +38,13 @@ module.exports.run = function(){
 }
 
 function sendSMS(user, r4SMS){
-  var textBody = `Hi, ${user.firstName}. You have ${r4SMS} medication reminder. Please log in to your account for more infomation.`
-  client.messages.create({
-    // to: user.cellNumber,
-    to: user.cellNumber,
-    from: "+14242034815",
-    body: textBody,
-  }, function(err, message) {
-    console.log(err, message);
-  });
+//   var textBody = `Hi, ${user.firstName}. You have ${r4SMS} medication reminder${r4SMS = 1 ? "" : "s"}. Please log in to your account for more infomation.`
+//   client.messages.create({
+//     // to: user.cellNumber,
+//     to: user.cellNumber,
+//     from: "+14242034815",
+//     body: textBody,
+//   }, function(err, message) {
+//     console.log(err, message);
+//   });
 }

@@ -4,7 +4,7 @@
   angular
     .module("victor")
     .factory("regimenService", regimenService)
-    .con
+
 
   regimenService.$inject = ["$log", "$http","_"];
 

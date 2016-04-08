@@ -1,8 +1,5 @@
 var User = require("../models/user");
 
-var CronJob = require('cron').CronJob;
-
-
 module.exports = {
   index: index,
   create:create,

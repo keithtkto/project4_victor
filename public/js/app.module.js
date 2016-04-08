@@ -3,8 +3,11 @@
   "use strict"
 
   angular
-    .module("victor", ["ui.router", "ngResource", "ngAnimate", "angular-carousel"])
+    .module("victor", ["ui.router", "ngResource"])
     .constant('_', window._);
 
 
 })();
+
+
+// "ngAnimate", "angular-carousel"

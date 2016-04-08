@@ -6,13 +6,15 @@
     .module("victor")
     .controller("UserController", UserController)
 
-  UserController.$inject = ["$log", "tokenService", "$state", "$http", "regimenService"]
+  UserController.$inject = ["$log", "tokenService", "$state", "$http", "regimenService", "recordService"]
 
-  function UserController($log, token, $state, $http, rs) {
+  function UserController($log, token, $state, $http, rs, record) {
     $log.info("user controller loaded")
     var vm = this;
     vm.logout             = logout;
     vm.user               = token.decode();
+
+    //regimen and meds
     vm.submitnewRegimen   = submitnewRegimen;
     vm.showMeds       = showMeds;
     vm.generateEmptyArray = generateEmptyArray;
@@ -22,6 +24,9 @@
     vm.submitEditMed      = submitEditMed;
     vm.showRegimens       = showRegimens;
     vm.generateEmptyArray();
+
+    //record
+    vm.showRecord         = showRecord;
 
 
     vm.doseUnits          = rs.doseUnits;
@@ -51,10 +56,6 @@
 
 
     //regimen http calls
-
-
-
-
     function showMeds() {
       rs.showMeds()
       .then(function(data) {
@@ -69,9 +70,7 @@
       rs.showRegimens()
       .then(function(data){
         vm.showRegimenData = data
-
-      })
-
+      });
     }
 
     function submitnewRegimen() {
@@ -143,6 +142,21 @@
       .catch(function(err){
         $log.debug(err)
       });
+    }
+
+
+
+    function showRecord(){
+      $log.info("showRecords click")
+      record.showRecord()
+      .then(function(record){
+
+        $log.info(record)
+        vm.reportList = record.data
+
+        $state.go("user.myreport")
+      })
+
     }
 
 
