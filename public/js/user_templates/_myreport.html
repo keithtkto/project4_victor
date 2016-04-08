@@ -1,16 +1,48 @@
-<div ng-repeat="(date, reportArray) in vm.reportList">
-{{date.slice(0,16)}}
 
-<br>
-{{reportArray}}
-<div ng-repeat="report in reportArray">
-  <h3>{{report.nameDosage}}</h3>
+<h1>My report</h1>
+<div id="wrapper" ng-repeat="(date, reportArray) in vm.reportList">
+
+  <div class="card-n-icon">
+    <div class="card" >
+      <div class="col-1" >
+        <div class="col-1" ng-repeat="ra in reportArray" >
+           <h1 ng-if="$index === 0">{{date.slice(0,16)}}</h1><br>
+            <h2 style="font-size: 30px">
+              {{ra.nameDosage}}
+            </h2>
+
+            <h2>
+              @{{ra.timeScheduled.slice(11,16)}}
+            </h2>
+
+            <span>Completed?</span>
+            <span ng-show="{{ra.timeTaken}}" >Yes</span>
+            <span ng-show="{{!ra.timeTaken}}" >No</span>
 
 
+            <span>Enter Time Taken</span>
+            <label>
+            <div>
+              <select name="hour" tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].hr" ng-required="true" >
+                <option value="">HR</option>
+                <option ng-repeat="hr in vm.quantity track by $index" ng-if="$index < 12" value="{{hr}}" ng-required="true">{{hr}}</option>
+              </select> <strong style="font-weight: bolder">:</strong>
+              <select tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].min">
+                <option value="">MIN</option>
+                <option ng-repeat="min in [00,15,30,45]" value="{{min}}">{{min}}</option>
+              </select>
+              <select tabindex="9" tabindex="5" ng-model="vm.emptyArr[$index].apm" ng-required="true">
+                <option value="">A|P</option>
+                <option ng-repeat="apm in ['am','pm']" value="{{apm}}">{{apm}}</option>
+              </select>
+            </div>
+            </label>
 
-</div>
+        </div>
+      </div>
+
+    </div>
 
 
-
-</div>
-
+  </div>
+ </div>

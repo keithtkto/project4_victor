@@ -69,6 +69,7 @@
       $log.info("showRegimen click")
       rs.showRegimens()
       .then(function(data){
+        $log.info(data)
         vm.showRegimenData = data
       });
     }

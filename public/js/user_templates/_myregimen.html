@@ -1,11 +1,10 @@
 
-
-<h1>Upcoming regemin</h1>
+<h1>Schedule today today</h1>
 <div id="wrapper" ng-repeat="bigArr in vm.showRegimenData">
 
   <div class="card-n-icon" >
     <div class="card" >
-      <div class="col-1" ng-repeat="task in bigArr" ng-if="vm.timeNow < bigArr[0].hour">
+      <div class="col-1" ng-repeat="task in bigArr" ng-if="true">
         <div class="col-1"  >
            <h1 ng-if="$index === 0">At {{ task.hour > 12 ? task.hour - 12 : task.hour }}{{task.hour > 11 ? "pm" : "am"}} </h1><br>
             <h2>
@@ -30,4 +29,6 @@
 
   </div>
  </div>
+
+
 
