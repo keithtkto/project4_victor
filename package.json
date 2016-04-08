@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "start2": "npm run cronjobs & node ./bin/www",
+    "start": "npm run cronjobs & node ./bin/www",
     "seed": "node ./config/seeds.js",
     "schedule_regimen": "node -e \"require('./tasks/schedule_regimen').run()\"",
     "cronjobs": "./bin/cron_schedule_regimen & ./bin/cron_send_reminders & ./bin/cron_close_scheduled_regimens"
@@ -15,6 +14,7 @@
     "body-parser": "~1.13.2",
     "cron": "^1.1.0",
     "debug": "~2.2.0",
+    "dotenv": "^2.0.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
     "jsonwebtoken": "^5.7.0",
@@ -23,7 +23,8 @@
     "mongoose-bcrypt": "^1.2.3",
     "morgan": "~1.6.1",
     "node-sass-middleware": "^0.9.8",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "twilio": "^2.9.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

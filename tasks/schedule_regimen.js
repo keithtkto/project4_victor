@@ -16,8 +16,9 @@ module.exports.run = function(time) {
 
       // Create a new history for each!
       regimens.forEach(function(regimen) {
-        regimen.history.push({});
+        regimen.history.push({alert: regimen.reminder});
         regimen.parent().save();
+        console.log("regimen saved", regimen)
       });
     })
 };

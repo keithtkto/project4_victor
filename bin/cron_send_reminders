@@ -1,9 +1,28 @@
 #!/usr/bin/env node
 
+var debug = require('debug')('task:*');
+
 var CronJob = require('cron').CronJob;
+var Task    = require('../tasks/send_reminders');
 
-var cj = new CronJob('*/10 * * * * *', function() {
-  console.log("-> starting cron_send_reminders…");
+var args = process.argv.slice(2),
+    pattern;
 
-  console.log("-> closing cron_send_reminders.");
+if (args[0] === 'test') {
+  pattern = '*/5 * * * * *';
+} else {
+  pattern = '* */15 * * * *';
+}
+
+
+var cj = new CronJob(pattern, function() {
+  debug("-> starting cron_schedule_regimen…!!!!!!!!!!!!!!!!!!");
+
+  Task
+    .run()
+    .catch()
+    .then(function() {
+      debug("-> closing cron_schedule_regimen.");
+    });
+
 }, null, true, 'America/Los_Angeles');

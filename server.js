@@ -15,6 +15,9 @@ var env      = require('./config/environment'),
     mongoose = require('./config/database'),
     routes   = require('./routes/api_routes');
 
+
+require('dotenv').config();
+
 // Instantiate a server application.
 var app = express();
 
@@ -138,5 +141,6 @@ function addFailedAuthHeader(err, req, res, next) {
   }
   next(err);
 }
+
 
 module.exports = app;
