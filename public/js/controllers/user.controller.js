@@ -27,6 +27,7 @@
 
     //record
     vm.showRecord         = showRecord;
+    vm.editTimeTaken      = editTimeTaken;
 
 
     vm.doseUnits          = rs.doseUnits;
@@ -145,7 +146,7 @@
       });
     }
 
-
+    // http call for record
 
     function showRecord(){
       $log.info("showRecords click")
@@ -157,7 +158,18 @@
 
         $state.go("user.myreport")
       })
+    }
 
+
+
+    function editTimeTaken(history, takenTime) {
+      $log.info("showRecords click")
+      $log.info(history, takenTime)
+      record.editTimeTaken(history, takenTime)
+      .then(function(record){
+        $log.info(record)
+        vm.reportList = record.data
+      });
     }
 
 

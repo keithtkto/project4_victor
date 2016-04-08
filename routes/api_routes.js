@@ -21,6 +21,8 @@ router.put( '/me/regimens', token.authenticate, regimensCtrl.update);
 router.delete( '/me/regimens', token.authenticate, regimensCtrl.destroy);
 // user record paths
 router.get( '/me/records', token.authenticate, recordsCtrl.index);
+router.put( '/me/records', token.authenticate, recordsCtrl.edit);
+
 
 
 
