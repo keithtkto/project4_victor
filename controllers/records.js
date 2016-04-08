@@ -16,7 +16,7 @@ function index(req, res, next) {
       console.log(history)
       //sorting history by date
       var recordByDate = _.groupBy(history, function(obj) {
-          return obj.timeScheduled
+          return obj.timeScheduled.toDateString()
       });
       res.send(recordByDate);
     });
