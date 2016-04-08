@@ -46,16 +46,7 @@ var userSchema = new mongoose.Schema({
 userSchema.statics.getUpcomingRegimens = function(upcomingTime) {
   return this
     .find({}).exec()
-    .then(function(users) {
-      // Get all of the regimens in the db.
-      //   - Get all users, then pull out just the regmin lists,
-      //   - take all the regimen lists and merge…
-      return _.flatten(_.map(users, 'regimen'))
-    })
-    // .then(function(regimens) {
-    //   // Filter for reminders!
-    //   return _.filter(regimens, 'reminder');
-    // })
+    .then(returnAllRegimen)
     .then(function(regimens) {
       // Filter for upcoming time matching
       return regimens.filter(function(regimen) {
@@ -65,35 +56,50 @@ userSchema.statics.getUpcomingRegimens = function(upcomingTime) {
 }
 
 
-
 userSchema.statics.dataForSMS = function(){
   return this
     .find({}).exec()
-    .then(function(users) {
-      return _.flatten(_.map(users, 'regimen'))
-    })
+    .then(returnAllRegimen)
     .then(function(regimens) {
-
-      // Filter for reminders!
+      // Filter for reminders (true ? false)!
       return _.filter(regimens, 'reminder');
     })
-    .then(function(regimensRequireAlert){
-      return _.flatten(_.map(regimensRequireAlert, 'history'))
-    })
+    .then(returnAllHistory)
     .then(function(history){
+      //filter out record has already taken or not from today
       history = history.filter(function(record){
         return !record.timeTaken && !record.missed
       })
-
+      //group history into by user._id to {user._id: [array of history]}
       var groupedHistory = _.groupBy(history, function(obj){
         debug("each regimen", obj.parent().parent().firstName)
           return obj.parent().parent()._id
-      })
-
-      // debug("new object", groupedHistory)
+      });
       return groupedHistory
-    })
+    });
 }
+
+userSchema.statics.closeYesterdayScheduleRegimens = function(){
+  return this
+    .find({}).exec()
+    .then(returnAllRegimen)
+    .then(returnAllHistory) //return all history
+}
+
+
+
+  // Get all of the regimens in the db.
+  //   - Get all users, then pull out just the regmin lists,
+  //   - take all the regimen lists and merge…
+function returnAllRegimen(users) {
+  return _.flatten(_.map(users, 'regimen'))
+}
+  // from the formated all regimen in array, pick out all history within
+  // merge into history list
+function returnAllHistory(regimens){
+  return _.flatten(_.map(regimens, 'history'))
+}
+
 
 // Add bcrypt hashing to model (works on a password field)!
 userSchema.plugin(require('mongoose-bcrypt'));
