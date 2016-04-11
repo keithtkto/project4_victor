@@ -24,18 +24,25 @@ function index(req, res, next) {
 
 
 function edit(req, res, next) {
-    User.findById(req.decoded._id).exec()
-    .then(function(user) {
+    return User
+      .findRecord2Edit()
+      .then(function(allHistory){
+        console.log("req.body", req.body)
+        var historyId = req.body.record._id
 
-      console.log("req.body",req.body)
+        var takenTime = req.body.takenTime
+        var editHistory = _.filter(allHistory, {"id": historyId})
+
+        console.log("editHistory b4", editHistory )
+
+        editHistory[0].timeTaken = takenTime
+
+        console.log("editHistory", editHistory)
+        console.log("editHistory parent", editHistory[0].parent().parent())
 
 
-      // var regimen (_.find(user, function(regimen){
-      //   return
-      // }))
+        editHistory[0].parent().parent().save();
 
-
-      // return _.flatten(_.map(user.regimen, 'history'))
     })
     .then(function(){
       console.log(history)

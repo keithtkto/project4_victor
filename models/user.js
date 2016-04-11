@@ -32,6 +32,8 @@ regimenSchema.methods.isAt = function(time) {
   return this.hour === time.hour && this.minute === time.minute;
 }
 
+
+
 var userSchema = new mongoose.Schema({
   createdAt:     {type: Date, default: Date.now},
   email:          { type: String, required: true, unique: true },
@@ -63,7 +65,7 @@ userSchema.statics.dataForSMS = function(){
     .then(returnAllRegimen)
     .then(function(regimens) {
       // Filter for reminders (true ? false)!
-      return _.filter(regimens, 'reminder');
+      return _.filter(regimens, "reminder");
     })
     .then(returnAllHistory)
     .then(function(history){
@@ -86,6 +88,13 @@ userSchema.statics.closeYesterdayScheduleRegimens = function(){
     .then(returnAllHistory) //return all history
 }
 
+
+userSchema.statics.findRecord2Edit = function(){
+  return this
+    .find({}).exec()
+    .then(returnAllRegimen)
+    .then(returnAllHistory)
+}
 
 
   // Get all of the regimens in the db.
