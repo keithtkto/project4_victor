@@ -14,9 +14,8 @@ if (args[0] === 'test') {
   pattern = '0 */15 * * * *';
 }
 
-
-var cj = new CronJob(pattern, function() {
-  debug("-> starting cron_schedule_regimen…!!!!!!!!!!!!!!!!!!");
+new CronJob(pattern, function() {
+  debug("-> starting cron_sen…!!!!!!!!!!!!!!!!!!");
 
   Task
     .run()
@@ -26,3 +25,5 @@ var cj = new CronJob(pattern, function() {
     });
 
 }, null, true, 'America/Los_Angeles');
+
+

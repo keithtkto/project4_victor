@@ -10,8 +10,8 @@ var User = require("../models/user");
 
 // Twilio Credentials
 var accountSid = "ACba9fab5169877615541990468f7fdfa7";
-// var authToken  = "e15825c04e4b2f58df5d8d0f4521c7d5" //old
-var authToken = process.env.TWILIO_TOKEN;
+var authToken  = "e15825c04e4b2f58df5d8d0f4521c7d5" //old
+// var authToken = process.env.TWILIO_TOKEN;
 
 
 
