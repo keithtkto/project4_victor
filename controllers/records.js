@@ -28,28 +28,20 @@ function edit(req, res, next) {
       .findRecord2Edit()
       .then(function(allHistory){
         console.log("req.body", req.body)
-        var historyId = req.body.record._id
-
-        var takenTime = req.body.takenTime
+        var historyId = req.body._id
         var editHistory = _.filter(allHistory, {"id": historyId})
 
-        console.log("editHistory b4", editHistory )
 
-        editHistory[0].timeTaken = takenTime
+        editHistory[0].isTaken = !editHistory[0].isTaken
 
-        console.log("editHistory", editHistory)
+        console.log("editHistory[0] b4", editHistory[0] )
         console.log("editHistory parent", editHistory[0].parent().parent())
 
-
         editHistory[0].parent().parent().save();
-
-    })
-    .then(function(){
-      console.log(history)
-      //sorting history by date
-      var recordByDate = _.groupBy(history, function(obj) {
-          return obj.timeScheduled.toDateString();
-      });
-      res.send(recordByDate);
+        res.json({
+          success: 200,
+          editedId: editHistory[0]._id,
+          message: "Successfully changed isTaken status"
+        });
     });
 }

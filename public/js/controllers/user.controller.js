@@ -27,7 +27,7 @@
 
     //record
     vm.showRecord         = showRecord;
-    vm.editTimeTaken      = editTimeTaken;
+    vm.editIsTaken        = editIsTaken;
 
 
     vm.doseUnits          = rs.doseUnits;
@@ -152,24 +152,24 @@
       $log.info("showRecords click")
       record.showRecord()
       .then(function(record){
-
         $log.info(record)
         vm.reportList = record.data
-
         $state.go("user.myreport")
       })
     }
 
 
 
-    function editTimeTaken(history, takenTime) {
+    function editIsTaken(history) {
       $log.info("showRecords click")
-      $log.info(history, takenTime)
-      record.editTimeTaken(history, takenTime)
-      .then(function(record){
-        $log.info(record)
+      $log.info(history)
+      record.editIsTaken(history)
+      .then(function(){
+        showRecord()
+      })
+      .then(function(){
         vm.reportList = record.data
-      });
+      })
     }
 
 

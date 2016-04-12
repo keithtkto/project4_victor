@@ -1,11 +1,11 @@
 
 <h1>My report</h1>
-<div id="wrapper" ng-repeat="(date, reportArray) in vm.reportList">
+<div id="wrapper" ng-repeat="(date, reportArray) in vm.reportList track by $index">
 
   <div class="card-n-icon">
     <div class="card" >
       <div class="col-1" >
-        <div class="col-1" ng-repeat="ra in reportArray" >
+        <div class="col-1" ng-repeat="ra in reportArray track by $index" >
            <h1 ng-if="$index === 0">{{date.slice(0,16)}}</h1><br>
             <h2 style="font-size: 30px">
               {{ra.nameDosage}}
@@ -15,41 +15,13 @@
               @{{ra.timeScheduled.slice(11,16)}}
             </h2>
 
-            <span>Completed?</span>
-            <span ng-show="{{ra.timeTaken}}" >Yes</span>
-            <span ng-show="{{!ra.timeTaken}}" >No</span>
+            <span>Taken?</span>
+            <span ng-show="{{ra.isTaken}}" >Yes</span>
+            <span ng-show="{{!ra.isTaken}}" >No</span>
 
-            <form name="time-report{{[$index]}}"  ng-submit="vm.editTimeTaken(ra, vm.takenTime[$parent.$index][$index])">
-              <span>Enter Time Taken</span>
-              <label>
-              <div>
-                <select name="hour" tabindex="9" tabindex="5" ng-model="vm.takenTime[$parent.$index][$index].hr" ng-required="true">
-                  <option value="">HR</option>
-                  <option ng-repeat="hr in vm.quantity track by $index" ng-if="$index < 12" value="{{hr}}">{{hr}}</option>
-                </select> <strong style="font-weight: bolder">:</strong>
-                <select tabindex="9" tabindex="5" ng-model="vm.takenTime[$parent.$index][$index].min" ng-required="true">
-                  <option value="">MIN</option>
-                  <option ng-repeat="min in [00,15,30,45]" value="{{min}}">{{min}}</option>
-                </select>
-                <select tabindex="9" tabindex="5" ng-model="vm.takenTime[$parent.$index][$index].apm" ng-required="true" required>
-                  <option value="">A|P</option>
-                  <option ng-repeat="apm in ['am','pm']" value="{{apm}}">{{apm}}</option>
-                </select>
-                <select tabindex="9" tabindex="5" ng-model="vm.takenTime[$parent.$index][$index].day" ng-required="true"  >
-                  <option value="">today?</option>
-                  <option ng-repeat="day in ['today','yesterday']" value="{{day}}">{{day}}</option>
-                </select>
-              </div>
-              </label>
-
-              <button type="submit">Submit</button>
-            </form>
-
+            <input type="checkbox" ng-click="vm.editIsTaken(ra)">
         </div>
       </div>
-
     </div>
-
-
   </div>
- </div>
+</div>

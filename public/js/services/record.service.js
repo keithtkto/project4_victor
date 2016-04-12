@@ -11,7 +11,7 @@
     function recordService($log, $http, _ ){
       var recordData = {
         showRecord: showRecord,
-        editTimeTaken: editTimeTaken,
+        editIsTaken: editIsTaken,
       }
       return recordData
 
@@ -26,24 +26,12 @@
         })
       }
 
-      function editTimeTaken(record, time){
-
-        $log.info("service",time)
-        var minute = time.min;
-        var hour   = time.apm === "am" ? time.hr : (parseInt(time.hr) + 12);
-        var formatedTime = new Date(record.timeScheduled);
-          //setHours(-1) actually set back to previous day (23:15 hours)
-        if (time.day === "yesterday") formatedTime.setHours(-1);
-        formatedTime.setHours(hour);
-        formatedTime.setMinutes(minute);
-
-
-        $log.info("formatedTime", formatedTime)
+      function editIsTaken(record){
 
         return $http({
           method: "put",
           url:    "api/me/records",
-          data:    {record: record, takenTime: formatedTime}
+          data:    record
         })
         .then(function(record){
           return record
