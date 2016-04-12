@@ -84,17 +84,17 @@ nav {
   color: $offwhite;
   overflow: hidden;
   z-index: 0;
-  height: 100%;
   text-align: center;
 
   video {
     background-color: $almostblack;
     padding: 0px;
     position: absolute;
-    bottom: 0;
     right: 0;
     min-width: 100%;
-    min-height: 100%;
+    @media (max-height: 700px) {
+      min-height: 100%;
+    }
     width: auto;
     height: auto;
     z-index: -1000;
@@ -555,6 +555,15 @@ footer {
   background: -o-linear-gradient(70deg, $red 50%, $offwhite 50%); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(70deg, $red 50%, $offwhite 50%); /* For Firefox 3.6 to 15 */
   background: linear-gradient(70deg, $red 50%, $offwhite 50%); /* Standard syntax */
+}
+
+
+@media (min-width: 700px) {
+  video {
+    height: auto;
+    width: auto;
+    min-height: 40%;
+  }
 }
 
 

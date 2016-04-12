@@ -58,20 +58,20 @@ nav {
   color: #F4F4F4;
   overflow: hidden;
   z-index: 0;
-  height: 100%;
   text-align: center; }
   .video-container video {
     background-color: #2A2A2A;
     padding: 0px;
     position: absolute;
-    bottom: 0;
     right: 0;
     min-width: 100%;
-    min-height: 100%;
     width: auto;
     height: auto;
     z-index: -1000;
     overflow: hidden; }
+    @media (max-height: 700px) {
+      .video-container video {
+        min-height: 100%; } }
   .video-container .intro-text {
     margin-top: 11%; }
     .video-container .intro-text h1 {
@@ -419,3 +419,9 @@ footer {
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(70deg, #ed3d37 50%, #F4F4F4 50%);
   /* Standard syntax */ }
+
+@media (min-width: 700px) {
+  video {
+    height: auto;
+    width: auto;
+    min-height: 40%; } }
