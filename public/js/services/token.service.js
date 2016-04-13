@@ -10,7 +10,7 @@
   function tokenService($log, $window) {
     $log.debug("tokenService loaded!");
 
-    const TOKEN_KEY = 'victorissavinglives';
+    TOKEN_KEY = 'victorissavinglives';
     var service = {
       store:    store,
       retrieve: retrieve,
