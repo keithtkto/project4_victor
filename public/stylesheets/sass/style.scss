@@ -93,7 +93,7 @@ nav {
     right: 0;
     min-width: 100%;
     @media (max-height: 700px) {
-      min-height: 100%;
+      min-height: 90%;
     }
     width: auto;
     height: auto;
@@ -369,7 +369,23 @@ footer {
 
     margin-top: 11%;
     h1 {
-      font-size: 50px;
+      font-size: 80px;
+      font-weight: bolder;
+    }
+
+    p {
+      font-size: 30px;
+      width: 60%;
+      font-weight: bolder;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 50px;
+      }
+      p {
+        font-size: 15px;
+      }
     }
   }
 }
@@ -558,11 +574,11 @@ footer {
 }
 
 
-@media (min-width: 700px) {
+@media (min-width: 700px), handheld {
   video {
     height: auto;
     width: auto;
-    min-height: 40%;
+    min-height: 38%;
   }
 }
 

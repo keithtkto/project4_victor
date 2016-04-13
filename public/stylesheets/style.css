@@ -71,7 +71,7 @@ nav {
     overflow: hidden; }
     @media (max-height: 700px) {
       .video-container video {
-        min-height: 100%; } }
+        min-height: 90%; } }
   .video-container .intro-text {
     margin-top: 11%; }
     .video-container .intro-text h1 {
@@ -273,7 +273,17 @@ footer {
     padding: 100px;
     margin-top: 11%; }
     .theapp-problems > div h1 {
-      font-size: 50px; }
+      font-size: 80px;
+      font-weight: bolder; }
+    .theapp-problems > div p {
+      font-size: 30px;
+      width: 60%;
+      font-weight: bolder; }
+    @media (max-width: 700px) {
+      .theapp-problems > div h1 {
+        font-size: 50px; }
+      .theapp-problems > div p {
+        font-size: 15px; } }
 
 .aboutus-page {
   color: #F4F4F4; }
@@ -420,8 +430,8 @@ footer {
   background: linear-gradient(70deg, #ed3d37 50%, #F4F4F4 50%);
   /* Standard syntax */ }
 
-@media (min-width: 700px) {
+@media (min-width: 700px), handheld {
   video {
     height: auto;
     width: auto;
-    min-height: 40%; } }
+    min-height: 38%; } }
