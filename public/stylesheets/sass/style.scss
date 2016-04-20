@@ -178,7 +178,6 @@ nav {
   justify-content: space-around;
     div {
       text-align: center;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -192,18 +191,27 @@ nav {
       img {
         width: 250px;
         height: 250px;
-        margin: 0;
+        margin: 0 auto;
       }
 
-      #organize-icon {
-        margin: 24px 0 0 0;
-      }
 
       p {
         font-size: 20px;
         max-width: 250px;
         margin: 0 auto;
       }
+    }
+  }
+}
+
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .intro-goals {
+    div {
+      flex-direction: column;
     }
   }
 }
@@ -236,6 +244,22 @@ nav {
       align-items: flex-end;
       max-width: 250px;
       margin: 25px 5px;
+    }
+  }
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .intro-userstories {
+    margin: 0;
+    div {
+      flex-direction: column;
+      justify-content: center;
+      div {
+        max-width: 100%;
+      }
     }
   }
 }
@@ -315,6 +339,26 @@ footer {
   }
 }
 
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  footer{
+    text-align: center;
+
+    div {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      div {
+        max-width: 100%;
+      }
+
+    }
+  }
+}
 
 .theapp-victor {
   background-color: $almostblack;

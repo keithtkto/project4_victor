@@ -84,6 +84,10 @@
           url:          "/mysupport",
           templateUrl:  "/js/user_templates/_mysupport.html"
         })
+        .state("user.setting", {
+          url:          "/setting",
+          templateUrl:  "/js/user_templates/_setting.html"
+        })
         .state("user.contactus", {
           url:          "/contactus",
           templateUrl:  "/js/user_templates/_contactus.html"

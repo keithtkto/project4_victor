@@ -8,18 +8,7 @@ module.exports = {
 
 
 function index(req, res, next) {
-    User.findById(req.decoded._id).exec()
-    .then(function(user) {
-      return _.flatten(_.map(user.regimen, 'history'))
-    })
-    .then(function(history){
-      console.log(history)
-      //sorting history by date
-      var recordByDate = _.groupBy(history, function(obj) {
-          return obj.timeScheduled.toDateString();
-      });
-      res.send(recordByDate);
-    });
+  showRecords(req, res)
 }
 
 
@@ -44,4 +33,21 @@ function edit(req, res, next) {
           message: "Successfully changed isTaken status"
         });
     });
+}
+
+
+function showRecords(req, res){
+  User.findById(req.decoded._id).exec()
+  .then(function(user) {
+    return _.flatten(_.map(user.regimen, 'history'))
+  })
+  .then(function(history){
+    console.log(history)
+    //sorting history by date
+    var recordByDate = _.groupBy(history, function(obj) {
+        return obj.timeScheduled.toDateString();
+    });
+    res.send(recordByDate);
+  });
+
 }
