@@ -1,4 +1,4 @@
-/*[ui-view].ng-enter {
+[ui-view].ng-enter {
   transition: all 1s ease;
   opacity: 0;
 }
@@ -6,7 +6,76 @@
 [ui-view].ng-enter-active {
   opacity: 1;
 }
-*/
+
+
+
+.slideRight {
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight;
+
+  animation-duration: 8s;
+  -webkit-animation-duration: 8s;
+
+  animation-iteration-count:infinite;
+  -webkit-animation-iteration-count:infinite;
+
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+
+  visibility: visible !important;
+}
+
+.slideRight2 {
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight;
+
+  animation-duration: 6s;
+  -webkit-animation-duration: 6s;
+
+  animation-iteration-count:infinite;
+  -webkit-animation-iteration-count:infinite;
+
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+
+  visibility: visible !important;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  15% {
+    transform: translateX(0%);
+  }
+
+  85% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+@-webkit-keyframes slideRight {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  15% {
+    transform: translateX(0%);
+  }
+
+  85% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(150%);
+  }
+}
 
 
 /*Animate the ng-repeat*/
@@ -59,3 +128,5 @@
 .card-n-icon.ng-move-active {
   animation: 0.5s grow;
 }
+
+

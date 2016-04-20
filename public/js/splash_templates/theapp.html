@@ -3,7 +3,7 @@
   <div>
     <div>
      <h1>
-       <typer words="['I cannot remember', 'I am not well informed', 'I need more support']" type-time='150' backspace-time='50' start-delay='1500'></typer>
+       <typer words="['I cannot remember', 'I need more info', 'I need more support']" type-time='150' backspace-time='50' start-delay='1500'></typer>
       </h1>
       <p>No matter what your obstacles between you and your health regimen. Victor is here to help!</p>
     </div>
@@ -22,7 +22,7 @@
 
 
 <section class="theapp-victor">
-  <div>
+ <!--  <div>
     <div>
       <div>
         <h1>
@@ -68,14 +68,24 @@
         </p>
       </div>
     </div>
+  </div> -->
+
+    <div>
+      <div class="slideRight">
+        <h1>
+          {{vm.titleOne[vm.numb]}}
+        </h1>
+        <p>
+          {{vm.paragraph[vm.numb]}}
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
 
-
-
 <div class="theapp-facts">
-  <div>
+<!--   <div>
     <div class="my-carousel-header">
       <img alt="one of 3 not fill prescriptions" src="/assets/fill_3.png">
     </div>
@@ -83,6 +93,7 @@
       <h3>1 in 3 of all prescriptions <span>are never filled...</span></h3>
     </div>
   </div>
+
 
   <div>
     <div class="my-carousel-header">
@@ -118,13 +129,15 @@
     <div class="my-carousel-header">
       <h3>and $330 billion a year in unnecessary medical complication</h3>
     </div>
-  </div>
+  </div> -->
+
+  <div class="slideRight2">
+      <div class="my-carousel-header">
+        <img alt="picture about why this app is needed" ng-src="{{vm.pic[vm.num]}}">
+      </div>
+      <div class="my-carousel-header">
+        <h3>{{vm.words[vm.num]}}</h3>
+      </div>
+    </div>
 </div>
 
-<div>
-<ul rn-carousel class="image">
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-</ul>
-</div>
