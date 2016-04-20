@@ -10,7 +10,9 @@
   function appRoutes($urlRouterProvider, $stateProvider){
     $stateProvider
       .state("splash", {
-        templateUrl:  "js/splash_templates/splash.html"
+        templateUrl:  "js/splash_templates/splash.html",
+        controller:   "NavbarController",
+        controllerAs: "vm"
       })
         .state("splash.welcome", {
           url:          "/",

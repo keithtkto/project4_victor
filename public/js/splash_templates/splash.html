@@ -1,8 +1,20 @@
  <header>
-    <nav>
+    <div class="toggle-nav">
+      <img ng-click="vm.toggle = !vm.toggle" class="hamburger" src="/assets/menu_bar.png" alt="menu bar for smaller screens">
+      <ul ng-show="vm.toggle" class="toggle-navbar">
+        <li><a ng-click="vm.toggle = false" ui-sref="splash.welcome">HOME</a></li>
+        <li><a ng-click="vm.toggle = false" ui-sref="splash.theapp">THE APP</a></li>
+        <li><a ng-click="vm.toggle = false" ui-sref="splash.aboutus">ABOUT US</a></li>
+        <li><a ng-click="vm.toggle = false" ui-sref="splash.signup">SIGN UP</a></li>
+        <li><a ng-click="vm.toggle = false" ui-sref="splash.login">LOG IN</a></li>
+        <li class="download"><a ng-click="vm.toggle = false" ui-sref="splash.download">DOWNLOAD</a></li>
+      </ul>
+    </div>
+
+    <nav class="navbar">
       <div>
         <div>
-          <a ui-sref="splash.welcome"><img src="/assets/victor_logo.png" alt=""></a>
+          <a ui-sref="splash.welcome"><img src="/assets/victor_logo.png" alt="victor logo"></a>
         </div>
         <ul class="nav-bar-right">
           <li><a ui-sref="splash.theapp">THE APP</a></li>
