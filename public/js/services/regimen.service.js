@@ -46,7 +46,6 @@
           url:    "api/me/regimens"
         })
       .then(function(res){
-        $log.info(res.data)
         return reformMedsArray(res.data)
       });
     }
@@ -89,7 +88,6 @@
           data: data
         })
       .then(function(res){
-        $log.info(res.data)
         return reformMedsArray(res.data)
 
       })
@@ -101,7 +99,6 @@
         url:    "api/me/regimens",
         data:   data
       }).then(function(res){
-        $log.info("delete return data",res.data)
         return reformMedsArray(res.data)
       })
     }
@@ -112,7 +109,6 @@
         url:    "api/me/regimens",
         data:   data
       }).then(function(res){
-        $log.info("edit return data", res.data)
         return reformMedsArray(res.data)
       });
     }

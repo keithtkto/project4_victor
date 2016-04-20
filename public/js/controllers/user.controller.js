@@ -9,7 +9,6 @@
   UserController.$inject = ["$log", "tokenService", "$state", "$http", "regimenService", "recordService"]
 
   function UserController($log, token, $state, $http, rs, record) {
-    $log.info("user controller loaded")
     var vm = this;
     vm.logout             = logout;
     vm.user               = token.decode();
@@ -36,8 +35,6 @@
     var now = new Date()
     vm.timeNow = now.getHours()
 
-    vm.newRegimen = {name: "123", dosage: "123", description: "123", direction: "take it", reminder: true};
-
     function generateEmptyArray() {
       var emptyArray = [];
 
@@ -49,7 +46,6 @@
 
 
     function logout() {
-      $log.info("logout click");
       token.destroy();
       $state.go('splash.welcome');
     }
@@ -67,7 +63,6 @@
     }
 
     function showRegimens(){
-      $log.info("showRegimen click")
       rs.showRegimens()
       .then(function(data){
         $log.info(data)
@@ -79,7 +74,6 @@
       var data = [];
 
       generateNewRegimenInputData(data)
-      $log.info('click', data);
       rs.newRegimen(data)
       .then(function(data){
         vm.newRegimen = {};
@@ -94,7 +88,6 @@
     }
 
     function delMed(data){
-      $log.info("del clicked", data)
       rs.deleteMed(data)
       .then(function(data){
         vm.regimenIndex = data;
@@ -104,7 +97,6 @@
 
     function editMedForm(med) {
 
-      $log.info("edit med", med)
 
       vm.frequency = med.time.length.toString()
       vm.generateEmptyArray();
@@ -134,7 +126,6 @@
 
     function submitEditMed(){
       var data = [];
-      $log.info("edit form submit", vm.editMed);
       editRegimenInputData(data);
       rs.editRegimen(data)
       .then(function(data){
@@ -149,7 +140,6 @@
     // http call for record
 
     function showRecord(){
-      $log.info("showRecords click")
       record.showRecord()
       .then(function(record){
         $log.info(record)
@@ -161,8 +151,7 @@
 
 
     function editIsTaken(history) {
-      $log.info("showRecords click")
-      $log.info(history)
+
       record.editIsTaken(history)
       .then(function(){
         showRecord()

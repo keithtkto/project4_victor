@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "start2": "npm run cronjobs & node ./bin/www",
+    "start2": "node ./bin/www",
+    "start": "npm run cronjobs & node ./bin/www",
     "seed": "node ./config/seeds.js",
     "schedule_regimen": "node -e \"require('./tasks/schedule_regimen').run()\"",
     "cronjobs": "./bin/cron_schedule_regimen & ./bin/cron_send_reminders & ./bin/cron_close_scheduled_regimens"

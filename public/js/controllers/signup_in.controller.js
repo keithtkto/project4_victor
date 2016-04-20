@@ -8,23 +8,22 @@
     SignupController.$inject = ["$log", "$state", "authService", "userService"]
 
     function SignupController($log, $state, authService, userService) {
-      $log.info("signup controller")
       var vm = this;
 
-      vm.signUp = {
-        email:    "kts@victor.com",
-        password: "12345",
-        passwordConfirmation: "12345",
-        firstName: "Keto",
-        lastName:  "San",
-        cellNumber:"1234567890",
-        zipCode:   "90026"
-      };
+      // vm.signUp = {
+      //   email:    "kts@victor.com",
+      //   password: "12345",
+      //   passwordConfirmation: "12345",
+      //   firstName: "Keto",
+      //   lastName:  "San",
+      //   cellNumber:"1234567890",
+      //   zipCode:   "90026"
+      // };
 
-      vm.logIn = {
-        email:    "kts@victor.com",
-        password: "12345"
-      }
+      // vm.logIn = {
+      //   email:    "kts@victor.com",
+      //   password: "12345"
+      // }
 
       vm.nofooter = true;
 
